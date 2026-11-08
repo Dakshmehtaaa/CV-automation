@@ -1,0 +1,62 @@
+/* Find email drawer (5 Nov 2026) — same tokens as the Mercury drawer (studio-stripe.css). */
+#email-finder { position: fixed; z-index: 75; pointer-events: none; inset: 0 0 0 auto; }
+#email-finder .ef-panel { pointer-events: auto; position: fixed; top: 12px; right: 12px; bottom: 12px; width: min(480px, calc(100vw - 24px)); display: flex; flex-direction: column; background: var(--surface, #fff); color: var(--ink, #061b31); border: 1px solid var(--line-strong, #d6dee8); border-radius: 16px; box-shadow: 0 40px 80px -20px rgba(0,0,0,.45); overflow: hidden; }
+#email-finder header { display: flex; align-items: center; justify-content: space-between; padding: 16px 16px 14px 18px; border-bottom: 1px solid var(--line, #e5edf5); }
+#email-finder .hb-title { display: flex; gap: 10px; align-items: center; }
+#email-finder .hb-title small { display: block; color: var(--subtle, #64748d); font-size: 12px; }
+.ef-mark { display: grid !important; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #0f3b2d, #2f7a57) !important; color: #fff; font-weight: 700; font-size: 15px; }
+#email-finder .ef-x { width: 32px; height: 32px; border-radius: 8px; border: 0; background: none; color: var(--subtle, #64748d); font-size: 20px; cursor: pointer; }
+#email-finder .ef-body { flex: 1; overflow: auto; padding: 14px 18px 18px; display: grid; gap: 12px; align-content: start; }
+#email-finder textarea { width: 100%; box-sizing: border-box; resize: vertical; border-radius: 12px; padding: 10px 12px; font: inherit; font-size: 14px; background: var(--surface-2, #f6f9fc); color: var(--ink, #061b31); border: 1px solid var(--line-strong, #d6dee8); }
+#email-finder .ef-lbl { font-size: 12px; color: var(--muted, #425466); margin-bottom: -6px; }
+#email-finder .ef-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: space-between; }
+#email-finder .ef-seg { display: inline-flex; border: 1px solid var(--line-strong, #d6dee8); border-radius: 10px; overflow: hidden; }
+#email-finder .ef-seg button { border: 0; background: none; color: var(--muted, #425466); padding: 7px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+#email-finder .ef-seg button[aria-pressed=true] { background: var(--accent-soft, rgba(83,58,253,.08)); color: var(--accent-text, #533afd); font-weight: 600; }
+#email-finder .ef-btn { display: inline-flex; align-items: center; border-radius: 10px; padding: 7px 12px; font: inherit; font-size: 13px; cursor: pointer; border: 1px solid var(--line-strong, #d6dee8); background: var(--surface-2, #f6f9fc); color: var(--ink, #061b31); text-decoration: none; }
+#email-finder .ef-btn.ef-primary { background: var(--accent, #533afd); border-color: var(--accent, #533afd); color: #fff; font-weight: 600; }
+#email-finder .ef-btn:disabled { opacity: .5; cursor: default; }
+#email-finder .ef-busy { display: flex; gap: 10px; align-items: center; color: var(--muted, #425466); font-size: 13px; }
+#email-finder .ef-spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line-strong, #d6dee8); border-top-color: var(--accent, #533afd); animation: ef-spin 1s linear infinite; }
+@keyframes ef-spin { to { transform: rotate(360deg); } }
+#email-finder .ef-error { color: #c0392b; font-size: 13px; margin: 0; }
+#email-finder .ef-person { padding: 12px; border-radius: 12px; background: var(--surface-2, #f6f9fc); font-size: 13px; display: grid; gap: 3px; }
+#email-finder .ef-person strong { font-size: 15px; }
+#email-finder .ef-card { border: 1px solid var(--line, #e5edf5); border-radius: 12px; padding: 12px; display: grid; gap: 6px; font-size: 13px; }
+#email-finder .ef-card.ef-best { border-color: var(--accent, #533afd); }
+#email-finder .ef-email { font-size: 15px; font-weight: 600; word-break: break-all; }
+#email-finder .ef-chip { font-size: 11px; padding: 2px 8px; border-radius: 99px; font-weight: 600; }
+#email-finder .ef-high { background: rgba(39,174,96,.15); color: #1e8449; }
+#email-finder .ef-medium { background: rgba(243,156,18,.18); color: #b9770e; }
+#email-finder .ef-low { background: rgba(192,57,43,.14); color: #c0392b; }
+#email-finder .ef-pick { background: var(--accent-soft, rgba(83,58,253,.08)); color: var(--accent-text, #533afd); }
+#email-finder .ef-kind, #email-finder .ef-checks, #email-finder .ef-src, #email-finder .ef-notes, #email-finder .ef-meta, #email-finder .ef-hint { color: var(--muted, #425466); margin: 0; }
+#email-finder .ef-src a { color: var(--accent-text, #533afd); }
+#email-finder .ef-meta { font-size: 11px; color: var(--subtle, #64748d); }
+#email-finder .ef-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+#email-finder .ef-ex summary { cursor: pointer; color: var(--muted, #425466); font-size: 12px; }
+#email-finder .ef-ex ul { margin: 6px 0 0; padding-left: 18px; font-size: 12px; }
+#email-finder .ef-draft { border-top: 1px solid var(--line, #e5edf5); padding-top: 12px; display: grid; gap: 10px; }
+#email-finder .ef-draft h3, #email-finder .ef-hist h3 { margin: 0; font-size: 14px; }
+#email-finder .ef-draft h3 small { display: block; font-weight: 400; color: var(--subtle, #64748d); font-size: 12px; }
+#email-finder .ef-subject { display: flex; gap: 8px; align-items: center; font-size: 13px; flex-wrap: wrap; }
+#email-finder .ef-subject span { color: var(--subtle, #64748d); }
+#email-finder .ef-preview { width: 100%; height: 420px; border: 1px solid var(--line, #e5edf5); border-radius: 12px; background: #fff; }
+#email-finder .ef-hist { display: grid; gap: 6px; }
+#email-finder .ef-h { display: flex; justify-content: space-between; gap: 8px; border: 1px solid var(--line, #e5edf5); background: none; color: var(--ink, #061b31); border-radius: 10px; padding: 8px 10px; font: inherit; font-size: 13px; cursor: pointer; text-align: left; }
+#email-finder .ef-h code { color: var(--muted, #425466); }
+#email-finder .ef-toast { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); background: var(--ink, #061b31); color: var(--surface, #fff); padding: 8px 14px; border-radius: 10px; font-size: 13px; pointer-events: none; }
+.ef-launch.ef-running .ef-mark { animation: ef-spin 2.4s linear infinite; }
+#email-finder .ef-notes, #email-finder .ef-hint { font-size: 13px; line-height: 1.45; }
+
+#email-finder .ef-head-actions { display: flex; gap: 6px; align-items: center; }
+#email-finder .ef-status { display: flex; gap: 8px; align-items: center; }
+#email-finder .ef-st-found { background: var(--surface-3, #eef2f7); color: var(--muted, #425466); }
+#email-finder .ef-st-drafted { background: rgba(243,156,18,.18); color: #b9770e; }
+#email-finder .ef-st-emailed { background: rgba(39,174,96,.15); color: #1e8449; }
+#email-finder .ef-h { display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 8px; align-items: center; padding: 6px 8px; cursor: default; }
+#email-finder .ef-h-main { display: grid; gap: 2px; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; padding: 0; min-width: 0; }
+#email-finder .ef-h-main span { display: flex; gap: 6px; align-items: baseline; min-width: 0; }
+#email-finder .ef-h-main small, #email-finder .ef-hist h3 small { color: var(--subtle, #64748d); font-weight: 400; font-size: 12px; }
+#email-finder .ef-h-main code { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#email-finder .ef-mini { padding: 4px 8px; font-size: 12px; }

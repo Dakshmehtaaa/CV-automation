@@ -1,0 +1,1906 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-01T23:04:28Z",
+  "entries": [
+    {
+      "company": "Greenly",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "public_company_check",
+      "summary": "Estimated strong international openness from a team spanning 40+ nationalities and four international offices; this does not confirm a specific team's working language.",
+      "sources": [
+        {
+          "label": "Greenly careers: international team",
+          "url": "https://careers.greenly.earth/jobs"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "LABELIANS",
+      "aliases": [
+        "Labelians"
+      ],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate English friendliness for a French family business exporting to 60+ countries; everyday team language is unconfirmed.",
+      "sources": [
+        {
+          "label": "LABELIANS: French group and export presence",
+          "url": "https://labelians.com/fr/about"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Banque de France",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate English friendliness from international staff assignments and central-bank cooperation within a French institution.",
+      "sources": [
+        {
+          "label": "Banque de France: international careers",
+          "url": "https://www.recrutement.banque-france.fr/fr/carriere-linternational/les-detachements-de-la-banque-de-france-linternational"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "CDEFI",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate international openness from its European and international representation mission; internal English use is unconfirmed.",
+      "sources": [
+        {
+          "label": "CDEFI: institutional mission",
+          "url": "https://www.cdefi.fr/fr/contact"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Nexans",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "public_company_check",
+      "summary": "Estimated strong international openness from careers across 39 countries and around 30 nationalities working at headquarters; local language requirements can vary.",
+      "sources": [
+        {
+          "label": "Nexans careers: international mobility and headquarters diversity",
+          "url": "https://www.nexans.com/careers/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "MUSEE GREVIN",
+      "aliases": [
+        "Musée Grévin",
+        "Musée Grévin Paris",
+        "Musee Grevin"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "The light check found local recruitment information but no clear evidence of the museum team's English working culture.",
+      "sources": [
+        {
+          "label": "Musée Grévin careers",
+          "url": "https://www.grevin-paris.com/carrieres"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "ECF Group",
+      "aliases": [
+        "Groupe ECF"
+      ],
+      "score": 4,
+      "source_kind": "public_company_check",
+      "summary": "Estimated strong international openness from distribution across Europe, the Middle East and Asia-Pacific, including hubs in Paris, Dubai and Brisbane.",
+      "sources": [
+        {
+          "label": "ECF Group: international network",
+          "url": "https://ecfgroup.com/en/discover-the-group/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Mars / Royal Canin",
+      "aliases": [
+        "Mars Royal Canin",
+        "Royal Canin",
+        "Mars"
+      ],
+      "score": 4,
+      "source_kind": "public_company_check",
+      "summary": "Estimated strong international openness from Royal Canin's global workforce and Mars Petcare career network; the French team's working language still needs confirmation.",
+      "sources": [
+        {
+          "label": "Royal Canin: global careers",
+          "url": "https://careers.mars.com/global/en/royal-canin-global"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Interaction recruiter for unnamed family company Alpes-Maritimes",
+      "aliases": [
+        "Interaction",
+        "INTERACTION"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "The employer is unnamed, so the recruiter's own international presence cannot establish the client's English friendliness.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Malakoff Humanis",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "public_company_check",
+      "summary": "Estimated primarily French workplace context from its French mutualist and social-protection mission; no English-only working arrangement was verified.",
+      "sources": [
+        {
+          "label": "Malakoff Humanis: group organisation",
+          "url": "https://www.malakoffhumanis.com/groupe/notre-organisation/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "ROCKWOOL (marque Rockfon)",
+      "aliases": [
+        "ROCKWOOL",
+        "Rockfon",
+        "ROCKWOOL / Rockfon"
+      ],
+      "score": 4,
+      "source_kind": "public_company_check",
+      "summary": "Estimated strong international openness from a shared careers network spanning countries and brands including Rockfon; French role requirements can differ.",
+      "sources": [
+        {
+          "label": "ROCKWOOL: global careers and Rockfon vacancies",
+          "url": "https://www.rockwool.com/group/about-us/careers/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Fnac Darty",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate international openness for a French-origin retailer operating across Europe and other markets; this does not confirm English as the French office language.",
+      "sources": [
+        {
+          "label": "Fnac Darty: international presence",
+          "url": "https://www.fnacdarty.com/le-groupe/fnac-darty-dans-le-monde/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "BEST VALUE (société à mission)",
+      "aliases": [
+        "BEST VALUE",
+        "Best Value"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "The light search did not clearly identify this employer and its working culture, so no company score is assigned.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "MASTERIS (filiale de SNCF Voyageurs)",
+      "aliases": [
+        "MASTERIS",
+        "Masteris"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "The official overview confirms the SNCF Voyageurs subsidiary but does not establish everyday English use well enough for a company estimate.",
+      "sources": [
+        {
+          "label": "MASTERIS: company overview",
+          "url": "https://www.masteris.com/presentation-generale"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Stallergenes Greer",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "public_company_check",
+      "summary": "Estimated strong international openness from a global workforce, operations in 46 countries and manufacturing in Europe and the United States.",
+      "sources": [
+        {
+          "label": "Stallergenes Greer: company culture and global workforce",
+          "url": "https://www.stallergenesgreer.com/our-culture"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Actual group",
+      "aliases": [
+        "Groupe Actual",
+        "Actual"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "The light official-site check did not establish the relevant team's English working culture; a recruiter's score must not be transferred to an unnamed client.",
+      "sources": [
+        {
+          "label": "Actual group: official website",
+          "url": "https://www.groupeactual.eu/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Banque Palatine",
+      "aliases": [
+        "Palatine"
+      ],
+      "score": 2,
+      "source_kind": "public_company_check",
+      "summary": "Estimated primarily French workplace context from a banking network serving clients across France; English working arrangements remain unconfirmed.",
+      "sources": [
+        {
+          "label": "Banque Palatine: French business and private-banking network",
+          "url": "https://www.palatine.fr/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Grant Thornton",
+      "aliases": [
+        "Grant Thornton France"
+      ],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate international openness through a worldwide member-firm network; its reach does not establish the French firm's everyday working language.",
+      "sources": [
+        {
+          "label": "Grant Thornton France: worldwide network",
+          "url": "https://www.grantthornton.fr/fr/grant-thornton/grant-thornton-dans-le-monde/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Germany (General EN)",
+      "aliases": [
+        "Germany",
+        "Germany General EN",
+        "General EN"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "This is a general CV rather than an identified employer, so company English friendliness is not applicable.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Sciences Po",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate English openness from substantial English-taught programmes and international admissions; administrative teams may still work mainly in French.",
+      "sources": [
+        {
+          "label": "Sciences Po: programmes in English and international environment",
+          "url": "https://www.sciencespo.fr/en/prospective-students/programmes-in-english/"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Eiffage",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate international openness for a French group operating in 50 countries with international activity; individual French teams can have different language needs.",
+      "sources": [
+        {
+          "label": "Eiffage: worldwide presence",
+          "url": "https://www.eiffage.com/groupe/eiffage-implantations-dans-le-monde"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "LHH Recruitment Solutions for unnamed aerospace-industry client",
+      "aliases": [
+        "LHH Recruitment Solutions",
+        "LHH"
+      ],
+      "score": null,
+      "source_kind": "unknown",
+      "summary": "The aerospace client is unnamed, so LHH's own international network cannot establish this employer's English friendliness.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "CCI Paris Ile-de-France",
+      "aliases": [
+        "CCI Paris Île-de-France",
+        "CCI Paris IDF"
+      ],
+      "score": 3,
+      "source_kind": "public_company_check",
+      "summary": "Estimated moderate international openness from export support and international business work within an institution focused on the Paris regional economy.",
+      "sources": [
+        {
+          "label": "CCI Paris Ile-de-France: regional and international business missions",
+          "url": "https://www.cci-paris-idf.fr/fr/notre-groupe/missions"
+        }
+      ],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "L'Oréal",
+      "aliases": [
+        "L'Oreal",
+        "L’Oreal",
+        "L’Oréal",
+        "Loreal",
+        "L Oreal"
+      ],
+      "score": 5,
+      "source_kind": "user_benchmark",
+      "summary": "User calibration: 5/5 for company English friendliness; this is a user estimate rather than a verified promise for every team.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Back Market",
+      "aliases": [
+        "Backmarket",
+        "BackMarket"
+      ],
+      "score": 5,
+      "source_kind": "user_benchmark",
+      "summary": "User calibration: 5/5 for company English friendliness; this is a user estimate rather than a verified promise for every team.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Dataiku",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "user_benchmark",
+      "summary": "User calibration: 5/5 for company English friendliness; this is a user estimate rather than a verified promise for every team.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Thales",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "user_benchmark",
+      "summary": "User calibration: 3/5 for an international group with a strongly French workplace context in France.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Pollen Robotics",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "user_benchmark",
+      "summary": "User calibration was 1–2/5 for a very French workplace context; 2/5 is used as the displayed estimate.",
+      "sources": [],
+      "checked_at": "2026-10-01T23:04:28Z"
+    },
+    {
+      "company": "Challancin",
+      "aliases": [
+        "Entreprise Guy Challancin"
+      ],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French facility-services group described as human-sized; the French advert names no English, international or foreign-client need.",
+      "sources": [],
+      "checked_at": "2026-10-12T22:50:02.483956+00:00",
+      "run_id": "manual-backfill-2026-10-13"
+    },
+    {
+      "company": "EXTIA",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Engineering and digital consultancy; this internal QHSE role's French advert names no English need, so day-to-day English is likely limited.",
+      "sources": [],
+      "checked_at": "2026-10-12T22:50:02.485166+00:00",
+      "run_id": "manual-backfill-2026-10-13"
+    },
+    {
+      "company": "Je pars, tu pars, il part",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French foundation helping people access holidays; the French advert names no English or international work.",
+      "sources": [],
+      "checked_at": "2026-10-12T22:50:02.485959+00:00",
+      "run_id": "manual-backfill-2026-10-13"
+    },
+    {
+      "company": "Magellan Consulting",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international consulting and technology group with English fluency required; day-to-day language likely mixed French/English.",
+      "sources": [],
+      "checked_at": "2026-10-13T14:09:00.913683+00:00",
+      "run_id": "2026-10-13-claude-sheet-140357Z-e7095822"
+    },
+    {
+      "company": "AFNOR Groupe - Association Française de Normalisation",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: standardisation role with European and international committees and written and spoken English described as imperative.",
+      "sources": [],
+      "checked_at": "2026-10-13T14:09:00.919264+00:00",
+      "run_id": "2026-10-13-claude-sheet-140357Z-e7095822"
+    },
+    {
+      "company": "Université Paris Est Créteil (UPEC)",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French public university with national and regional networks; no English requirement or international signal in the text.",
+      "sources": [],
+      "checked_at": "2026-10-13T14:09:00.922520+00:00",
+      "run_id": "2026-10-13-claude-sheet-140357Z-e7095822"
+    },
+    {
+      "company": "Groupe ADP",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: large international airport group; English is not mentioned in the text, so this is inferred from the group's scale.",
+      "sources": [],
+      "checked_at": "2026-10-13T14:09:00.924618+00:00",
+      "run_id": "2026-10-13-claude-sheet-140357Z-e7095822"
+    },
+    {
+      "company": "Dassault Systèmes",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International software group; advert is in French but the employer operates worldwide.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.602508+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Burson",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: part of a global communications group, multinational clients.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.610797+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Groupe Léon Grosse",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French construction group, no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.613346+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Ramsay Santé",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French hospital group, mainly local clinic operations.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.615646+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "JLL",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: global real-estate services firm, advert in English.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.618100+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Sia",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: global consulting group, advert in English and English fluency required.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.622334+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "McDonald's",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international brand with French headquarters; fluent English stated as essential.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.625170+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "SCOR",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: global reinsurer, advert in English.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.627517+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "SECTION DE RECHERCHE",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: research institute with international staff, fluent English requested.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.632132+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Danone",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: global food group, advert in English, fluent English required.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.634688+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "IÉSEG School of Management",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international business school, fluent English requested.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.639278+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Air Liquide",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: global industrial group, advert in English.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.641917+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Chambre de commerce et d’industrie de région Paris Ile-de-France",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: regional chamber of commerce serving local SMEs, no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.644870+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Capgemini Invent",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international consulting group, English and French both requested.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.648144+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Extime Duty Free Paris",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: airport retail operator with two international shareholders, no English requirement stated.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.651675+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Orano",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international nuclear fuel group, clear written English required.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.654353+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Barrière",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French hotel and leisure group, no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.657111+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Hôpital Avicenne",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French public hospital group, no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.660007+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "IESEG",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international business school, English needed for international contacts.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.663533+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "Edenred",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: global company active in 44 countries, very good English and French required.",
+      "sources": [],
+      "checked_at": "2026-10-14T12:08:51.666447+00:00",
+      "run_id": "2026-10-14-claude-sheet-120202Z-063ea36b"
+    },
+    {
+      "company": "workfully",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: English-language advert, international fashion-brand clients and English proficiency listed as must-have.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.186386+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "AXA en France",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: large insurance group but French-language advert with no English requirement stated.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.192491+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "HLM",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French social-housing landlord, French-language advert and no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.195802+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "Communes",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French municipality, French-language advert and no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.202007+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "Allianz Trade en France",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: English-language advert for a global insurance group's sustainability office.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.208308+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "Nexter",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international defence group and English stated as the daily working language.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.211521+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "Ville de Champigny-sur-Marne",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French municipality, French-language advert and no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.221246+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "APHP HUP SEINE-ST-DENIS - AVICENNE",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French public hospital, French-language advert and no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.227523+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "The Estée Lauder Companies Inc.",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: English-language advert for a global prestige-beauty group with English mandatory.",
+      "sources": [],
+      "checked_at": "2026-10-15T10:32:03.231132+00:00",
+      "run_id": "2026-10-15-claude-sheet-102602Z-96ab1d65"
+    },
+    {
+      "company": "Arkema",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: written in English, group with customers and regulatory teams across a matrix organization.",
+      "sources": [],
+      "checked_at": "2026-10-16T12:43:30.715605+00:00",
+      "run_id": "2026-10-16-claude-sheet-121600Z-f606d767"
+    },
+    {
+      "company": "Société Générale",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: large French bank with international career mentions and good English requested, but a French-language advert and internal French-speaking networks.",
+      "sources": [],
+      "checked_at": "2026-10-16T12:43:30.720320+00:00",
+      "run_id": "2026-10-16-claude-sheet-121600Z-f606d767"
+    },
+    {
+      "company": "IXI-Groupe I Société à mission",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French insurance-expertise network with local firms and no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-16T12:43:30.724693+00:00",
+      "run_id": "2026-10-16-claude-sheet-121600Z-f606d767"
+    },
+    {
+      "company": "GROUPE ATLANTIC SYNERGY - Société en Nom Collectif",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: international group, English needed to work with international contacts and adapt content.",
+      "sources": [],
+      "checked_at": "2026-10-16T12:43:30.729354+00:00",
+      "run_id": "2026-10-16-claude-sheet-121600Z-f606d767"
+    },
+    {
+      "company": "Crédit Mutuel Alliance Fédérale",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French-language advert for a large French banking group, with some international contact via CIC CIB but no English named as a working language.",
+      "sources": [],
+      "checked_at": "2026-10-17T11:47:05.417359+00:00",
+      "run_id": "2026-10-17-claude-sheet-114032Z-81c2329c"
+    },
+    {
+      "company": "COMPLEO RH",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Estimate from the advert: French-language advert from a recruitment firm for a pharmaceutical site, with no English signal.",
+      "sources": [],
+      "checked_at": "2026-10-17T11:47:05.426285+00:00",
+      "run_id": "2026-10-17-claude-sheet-114032Z-81c2329c"
+    },
+    {
+      "company": "Conseils départementaux",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Local departmental council operating entirely in French.",
+      "sources": [],
+      "checked_at": "2026-10-19T07:30:29.954991+00:00",
+      "run_id": "2026-10-19-claude-sheet-073006Z-f39fe4d3"
+    },
+    {
+      "company": "Service Public",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French ministry department dealing with European regulations and international carbon frameworks requiring English.",
+      "sources": [],
+      "checked_at": "2026-10-19T07:30:29.960701+00:00",
+      "run_id": "2026-10-19-claude-sheet-073006Z-f39fe4d3"
+    },
+    {
+      "company": "Enseigne non disponible",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Advert is in French for a French subsidiary/workshop environment within an international group.",
+      "sources": [],
+      "checked_at": "2026-10-19T07:30:29.965297+00:00",
+      "run_id": "2026-10-19-claude-sheet-073006Z-f39fe4d3"
+    },
+    {
+      "company": "Paprec",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French environmental services group with no English requirements mentioned in the posting.",
+      "sources": [],
+      "checked_at": "2026-10-19T07:30:29.969952+00:00",
+      "run_id": "2026-10-19-claude-sheet-073006Z-f39fe4d3"
+    },
+    {
+      "company": "Pernod Ricard SA",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The entire advert is written in English for a global headquarters role.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.506467+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "Equans France",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Equans is a global energy and facility services company, though local site operations are primarily conducted in French.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.517536+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "GSF",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): GSF is a French facility services provider operating predominantly in French.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.521916+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "SOCOTEC",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French technical inspection and certification firm operating primarily in French for regional clients.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.526191+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "Batiment Industrie Reseaux",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French regional public works and utility infrastructure contractor operating entirely in French.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.530607+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "E 3 CONSEIL",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French environmental consultancy operating internationally with clients across multiple countries and requiring fluent English.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.534961+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "Keolis SA",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public transport subsidiary operating locally with French-language documentation and audits.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.539227+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "BOUYGUES TRAVAUX PUBLICS REGIONS FRANCE",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French civil engineering subsidiary of an international group, though daily operational site work is primarily in French.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.547423+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "Groupe BPCE",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French banking group with international operations where working materials may mix French and English.",
+      "sources": [],
+      "checked_at": "2026-10-20T07:18:10.555801+00:00",
+      "run_id": "2026-10-20-claude-sheet-071451Z-e2ae8580"
+    },
+    {
+      "company": "ChooseMyCompany",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French company serving international clients with English required for international accounts.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.637635+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "Carbometrix",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): English-language job posting explicitly naming English as a primary working language alongside French.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.644225+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "Fairly Made",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Job advert written entirely in English requiring bilingual fluency for international customer management.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.649152+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "Resah",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public procurement grouping operating primarily in French with French public bodies.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.653983+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "AORIF",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Regional social housing union functioning entirely in French across Ile-de-France institutions.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.659136+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "Ersilia",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Entire job advert is drafted in English and targets global fashion industry accounts.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.664250+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "Zei",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French SaaS start-up requiring French fluency and professional English for enterprise client relations.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.669210+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "Toovalu",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French climate tech and consulting firm requiring professional English for international client interactions.",
+      "sources": [],
+      "checked_at": "2026-10-20T13:23:34.674595+00:00",
+      "run_id": "2026-10-20-claude-sheet-132307Z-df34c245"
+    },
+    {
+      "company": "CD 93",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French local public administration with exclusively French-language operations and documentation.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.822131+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "FAREVA",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International contract manufacturing group operating across 14 countries on 3 continents with global sites requiring fluent English.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.827659+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "FAREVA CORPORATE France",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International industrial group with sites across three continents explicitly requiring fluent English.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.832882+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "Etablissements publics de coopération intercommunale",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public territorial authority operating entirely in French.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.849559+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "Muséum National d'Histoire Naturelle (MNHN)",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): European project environment operating in English alongside French scientific and public administration partners.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.856076+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "Citeo",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French eco-organism operating primarily within French national regulatory frameworks with French-language operations.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.866277+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "Lagardère Travel Retail",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International travel retail leader operating across 42 countries with global partnerships.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:05:47.873659+00:00",
+      "run_id": "2026-10-21-claude-sheet-070447Z-bd3e5b43"
+    },
+    {
+      "company": "Vestiaire Collective",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Job advert is fully written in English and describes a globally scaled scale-up with 50+ nationalities across multiple international hubs.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.033965+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "ARCHIMED",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Advert is authored entirely in English by an international healthcare investment firm with more than 30 nationalities.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.044932+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "Removall",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Job advert is published entirely in English and explicitly requires fluency in English for an international project scope.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.050500+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "Natixis",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert is written entirely in English and lists English fluency as a core requirement.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.055774+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "Crédit Agricole",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The entire job advert is written in French for a French banking group subsidiary with no explicit English requirement.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.061199+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "AZOCO2",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert is written in French for a Paris-based boutique advisory firm serving French clients.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.066535+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "KYC Consulting",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert explicitly requires fluent professional English to support multinational clients.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.072648+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "SFTRF AUTOROUTE A 43",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert is written entirely in French with no English requirement mentioned.",
+      "sources": [],
+      "checked_at": "2026-10-21T07:59:50.078812+00:00",
+      "run_id": "2026-10-21-claude-sheet-075936Z-77c04e0a"
+    },
+    {
+      "company": "UN Environment Programme",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert is written entirely in English and explicitly states English is the working language of UNEP's IMEO.",
+      "sources": [],
+      "checked_at": "2026-10-22T07:05:47.863157+00:00",
+      "run_id": "2026-10-22-claude-sheet-070445Z-f86bd7b1"
+    },
+    {
+      "company": "WordAppeal",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Founded by former The Economist journalists with an international team and multinational client portfolio where English is explicitly required.",
+      "sources": [],
+      "checked_at": "2026-10-22T07:05:47.869356+00:00",
+      "run_id": "2026-10-22-claude-sheet-070445Z-f86bd7b1"
+    },
+    {
+      "company": "BIP France",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Global consultancy based in Milan with an international team requiring bilingual French and English fluency.",
+      "sources": [],
+      "checked_at": "2026-10-22T07:05:47.875320+00:00",
+      "run_id": "2026-10-22-claude-sheet-070445Z-f86bd7b1"
+    },
+    {
+      "company": "LEAF INGENIERIE",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Job advert is published in French by a French engineering consultancy with no mention of English requirements.",
+      "sources": [],
+      "checked_at": "2026-10-22T07:05:47.891716+00:00",
+      "run_id": "2026-10-22-claude-sheet-070445Z-f86bd7b1"
+    },
+    {
+      "company": "APAVE CLIMATE",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French climate transition training organization operating primarily in French with professional English required for select content and partner interactions.",
+      "sources": [],
+      "checked_at": "2026-10-22T08:11:22.728225+00:00",
+      "run_id": "2026-10-22-claude-sheet-081113Z-edc9a6d8"
+    },
+    {
+      "company": "Maurel & Prom",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International oil and gas operator with multi-site international subsidiaries where fluent English is mandatory.",
+      "sources": [],
+      "checked_at": "2026-10-22T08:11:22.735189+00:00",
+      "run_id": "2026-10-22-claude-sheet-081113Z-edc9a6d8"
+    },
+    {
+      "company": "Groupe Avril",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Major French agri-food and agro-industrial group operating primarily in French with global supply chains.",
+      "sources": [],
+      "checked_at": "2026-10-22T08:11:22.741210+00:00",
+      "run_id": "2026-10-22-claude-sheet-081113Z-edc9a6d8"
+    },
+    {
+      "company": "NEXTON",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Advert is entirely in French for a French consulting firm and ESN targeting domestic clients.",
+      "sources": [],
+      "checked_at": "2026-10-23T14:10:58.067718+00:00",
+      "run_id": "2026-10-23-claude-sheet-141005Z-ae5781e5"
+    },
+    {
+      "company": "Crédit Agricole CIB",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International corporate and investment bank with global operations across 30 countries.",
+      "sources": [],
+      "checked_at": "2026-10-23T14:10:58.075425+00:00",
+      "run_id": "2026-10-23-claude-sheet-141005Z-ae5781e5"
+    },
+    {
+      "company": "RESAH Réseau des acheteurs hospitaliers",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public hospital purchasing network operating primarily under French public procurement regulations.",
+      "sources": [],
+      "checked_at": "2026-10-23T14:10:58.081792+00:00",
+      "run_id": "2026-10-23-claude-sheet-141005Z-ae5781e5"
+    },
+    {
+      "company": "ECO-ECO",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Boutique French CSR consulting agency operating predominantly in French with local clients.",
+      "sources": [],
+      "checked_at": "2026-10-23T14:10:58.088475+00:00",
+      "run_id": "2026-10-23-claude-sheet-141005Z-ae5781e5"
+    },
+    {
+      "company": "PRISME Cabinet d'Ingénierie RH",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French recruitment and HR engineering firm with domestic focus and French job advert.",
+      "sources": [],
+      "checked_at": "2026-10-23T14:10:58.095264+00:00",
+      "run_id": "2026-10-23-claude-sheet-141005Z-ae5781e5"
+    },
+    {
+      "company": "EY",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Global professional services firm with English as primary operating language across Europe.",
+      "sources": [],
+      "checked_at": "2026-10-25T11:27:05.653546+00:00",
+      "run_id": "2026-10-25-claude-sheet-103705Z-379ee7b7"
+    },
+    {
+      "company": "Bouygues Telecom",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The job description is in French, though knowledge of European frameworks and group-level reporting is required.",
+      "sources": [],
+      "checked_at": "2026-10-25T11:27:05.674529+00:00",
+      "run_id": "2026-10-25-claude-sheet-103705Z-379ee7b7"
+    },
+    {
+      "company": "Real Staffing",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Recruitment agency job advert written entirely in French for an industrial site in France without English requirements mentioned.",
+      "sources": [],
+      "checked_at": "2026-10-25T11:27:05.686664+00:00",
+      "run_id": "2026-10-25-claude-sheet-103705Z-379ee7b7"
+    },
+    {
+      "company": "HOCO",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French hospitality and leisure group with international venues and international clientele.",
+      "sources": [],
+      "checked_at": "2026-10-25T11:27:05.707885+00:00",
+      "run_id": "2026-10-25-claude-sheet-103705Z-379ee7b7"
+    },
+    {
+      "company": "Reporting 21",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Sustainability consulting firm with an international client base and explicit requirement for professional working English.",
+      "sources": [],
+      "checked_at": "2026-10-25T11:27:05.720456+00:00",
+      "run_id": "2026-10-25-claude-sheet-103705Z-379ee7b7"
+    },
+    {
+      "company": "Chanel",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Global luxury brand requiring professional English for corporate collaboration.",
+      "sources": [],
+      "checked_at": "2026-10-26T08:05:34.954273+00:00",
+      "run_id": "2026-10-26-claude-sheet-080505Z-de8b016d"
+    },
+    {
+      "company": "Talents Industrie",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert is entirely in French for a French technical recruitment agency with no indication of international operations.",
+      "sources": [],
+      "checked_at": "2026-10-26T08:05:34.962772+00:00",
+      "run_id": "2026-10-26-claude-sheet-080505Z-de8b016d"
+    },
+    {
+      "company": "Forums Talents Handicap",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Large European omnichannel retailer operating in multiple countries with international reporting standards.",
+      "sources": [],
+      "checked_at": "2026-10-26T08:05:34.971018+00:00",
+      "run_id": "2026-10-26-claude-sheet-080505Z-de8b016d"
+    },
+    {
+      "company": "NORMEC VERIFAVIA SAS",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Multicultural verification team with international scope and English marked indispensable.",
+      "sources": [],
+      "checked_at": "2026-10-26T08:05:34.979003+00:00",
+      "run_id": "2026-10-26-claude-sheet-080505Z-de8b016d"
+    },
+    {
+      "company": "Pelham Media",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Founded by former The Economist journalists with an international bilingual client base and team.",
+      "sources": [],
+      "checked_at": "2026-10-26T09:59:51.013587+00:00",
+      "run_id": "2026-10-26-claude-sheet-095941Z-3c1becd9"
+    },
+    {
+      "company": "Tikehau Capital",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert features English as its primary text and describes global alternative asset management operations.",
+      "sources": [],
+      "checked_at": "2026-10-26T09:59:51.023583+00:00",
+      "run_id": "2026-10-26-claude-sheet-095941Z-3c1becd9"
+    },
+    {
+      "company": "Paris Saclay Agglomération",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public territorial authority operating primarily in French.",
+      "sources": [],
+      "checked_at": "2026-10-27T08:54:15.838065+00:00",
+      "run_id": "2026-10-27-claude-sheet-085335Z-1c9351cf"
+    },
+    {
+      "company": "Fed Engineering",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French recruitment firm advertising a position for an industrial SME in Île-de-France without explicit international scope.",
+      "sources": [],
+      "checked_at": "2026-10-27T08:54:15.846651+00:00",
+      "run_id": "2026-10-27-claude-sheet-085335Z-1c9351cf"
+    },
+    {
+      "company": "XL CATLIN SERVICES SE",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International insurance entity operating with cross-border European teams and strongly recommended professional English.",
+      "sources": [],
+      "checked_at": "2026-10-27T08:54:15.861603+00:00",
+      "run_id": "2026-10-27-claude-sheet-085335Z-1c9351cf"
+    },
+    {
+      "company": "ANAP",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public health agency operating primarily in French with national public-sector partners.",
+      "sources": [],
+      "checked_at": "2026-10-28T08:06:38.223796+00:00",
+      "run_id": "2026-10-28-claude-sheet-080547Z-84bced2f"
+    },
+    {
+      "company": "ABEILLE ASSURANCES",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Advert is written entirely in French with domestic group stakeholders and no explicit English requirement.",
+      "sources": [],
+      "checked_at": "2026-10-28T08:06:38.239841+00:00",
+      "run_id": "2026-10-28-claude-sheet-080547Z-84bced2f"
+    },
+    {
+      "company": "Département du Val de Marne",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French local public administration with primarily French-language operations.",
+      "sources": [],
+      "checked_at": "2026-10-28T08:06:38.247531+00:00",
+      "run_id": "2026-10-28-claude-sheet-080547Z-84bced2f"
+    },
+    {
+      "company": "SERVAIR",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French catering operations subsidiary with advert and workplace communications in French.",
+      "sources": [],
+      "checked_at": "2026-10-28T08:06:38.254553+00:00",
+      "run_id": "2026-10-28-claude-sheet-080547Z-84bced2f"
+    },
+    {
+      "company": "PPT Consulting",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Advert is published fully in English for an international consulting group in Paris.",
+      "sources": [],
+      "checked_at": "2026-10-29T05:01:52.571692+00:00",
+      "run_id": "2026-10-29-claude-sheet-050051Z-ad49617b"
+    },
+    {
+      "company": "CTP environnement group",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Requires professional English to communicate with international subsidiaries.",
+      "sources": [],
+      "checked_at": "2026-10-29T05:01:52.580595+00:00",
+      "run_id": "2026-10-29-claude-sheet-050051Z-ad49617b"
+    },
+    {
+      "company": "Sweep",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The entire advert is written in English and describes a global, bilingual delivery environment.",
+      "sources": [],
+      "checked_at": "2026-10-29T05:01:52.588962+00:00",
+      "run_id": "2026-10-29-claude-sheet-050051Z-ad49617b"
+    },
+    {
+      "company": "Groupe Coriance",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French energy operator with domestic operations and French-language business documentation.",
+      "sources": [],
+      "checked_at": "2026-10-29T05:01:52.596674+00:00",
+      "run_id": "2026-10-29-claude-sheet-050051Z-ad49617b"
+    },
+    {
+      "company": "APTISKILLS",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French engineering consultancy serving multinational clients in aerospace and defense where English may be used for technical documentation.",
+      "sources": [],
+      "checked_at": "2026-10-29T05:01:52.604357+00:00",
+      "run_id": "2026-10-29-claude-sheet-050051Z-ad49617b"
+    },
+    {
+      "company": "Transdev Vexin",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public transport subsidiary operating locally under IDFM contracts with French-language documentation.",
+      "sources": [],
+      "checked_at": "2026-11-03T15:56:26.139779+00:00",
+      "run_id": "2026-11-03-claude-sheet-155442Z-dc2d1bf9"
+    },
+    {
+      "company": "Bureau Veritas | Marine & Offshore",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International TIC firm with bilingual operations, although the local client-facing consulting team operates primarily in French.",
+      "sources": [],
+      "checked_at": "2026-11-03T15:56:26.159579+00:00",
+      "run_id": "2026-11-03-claude-sheet-155442Z-dc2d1bf9"
+    },
+    {
+      "company": "DEPARTEMENT DU VAL D'OISE",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French local government authority conducting institutional operations exclusively in French.",
+      "sources": [],
+      "checked_at": "2026-11-03T15:56:26.190848+00:00",
+      "run_id": "2026-11-03-claude-sheet-155442Z-dc2d1bf9"
+    },
+    {
+      "company": "Département des Hauts-de-Seine",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French departmental public administration with operations and communication primarily in French.",
+      "sources": [],
+      "checked_at": "2026-11-03T15:56:26.206888+00:00",
+      "run_id": "2026-11-03-claude-sheet-155442Z-dc2d1bf9"
+    },
+    {
+      "company": "Muséum Nationel d'Histoire Naturelle",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public scientific institution operating primarily in French, though some research collaborations have an international dimension.",
+      "sources": [],
+      "checked_at": "2026-11-03T15:56:26.225804+00:00",
+      "run_id": "2026-11-03-claude-sheet-155442Z-dc2d1bf9"
+    },
+    {
+      "company": "Geodis Interservices",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French contract logistics site role with French-language interactions and local regulatory bodies.",
+      "sources": [],
+      "checked_at": "2026-11-03T15:56:26.247407+00:00",
+      "run_id": "2026-11-03-claude-sheet-155442Z-dc2d1bf9"
+    },
+    {
+      "company": "EPSA",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International consulting group with a Paris-based mission conducted in French and English.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.328920+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "CGI",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Global IT and consulting multinational with widespread international operations and English language requirements.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.338500+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "Crédit Coopératif",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French cooperative banking subsidiary requiring fluent English alongside French.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.348180+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "CASDEN Banque Populaire",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French cooperative bank focused on French public service employees with entirely French-language operations.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.356458+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "Direction Générale de l'Aménagement, du Logement et de la Nature (DGALN)",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French central government ministry direction operating entirely in French.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.371210+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "Direction Générale de l'Energie et du Climat (DGEC)",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): European and international affairs unit requiring daily working-level English (C1) for EU negotiations.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.379512+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "Ville de Clichy-la-Garenne",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French municipality context where all public administration and stakeholder communications are in French.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.394778+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "Infopro Digital",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French B2B group operating across 20 countries with a bilingual software environment and international client base.",
+      "sources": [],
+      "checked_at": "2026-11-04T05:02:12.402882+00:00",
+      "run_id": "2026-11-04-claude-sheet-050109Z-9da953e5"
+    },
+    {
+      "company": "Fédération Française de Tennis",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): National French sports federation operating primarily in French, though requiring professional English.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.419085+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "NEXUS Automotive International SA",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Job description is in English, describes an international automotive network managing global members and suppliers, and lists English as a required skill.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.428898+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Unibail-Rodamco-Westfield",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International commercial real estate group operating across Europe and the US with bilingual French/English requirements.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.437953+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Givaudan",
+      "aliases": [],
+      "score": 5,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): The advert is written entirely in English for a global multinational corporation.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.446372+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Bosch Group",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Global multinational industrial group operating internationally with bilingual requirements.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.462218+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Direction de la Transformation",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public university administration with primarily French-language operations.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.472036+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Groupe Nicollin",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French municipal and waste services group operating essentially in French.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.480724+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "SPIE CityNetworks",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French infrastructure services subsidiary operating predominantly in French.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.489141+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Région Île-de-France",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Regional public administration operating primarily in French.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.497847+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Arpège",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French catering and corporate services subsidiary with advert written entirely in French.",
+      "sources": [],
+      "checked_at": "2026-11-05T09:14:17.506376+00:00",
+      "run_id": "2026-11-05-claude-sheet-091132Z-02bfb8d1"
+    },
+    {
+      "company": "Lindt & Sprüngli (France)",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French subsidiary of an international Swiss group with bilingual potential.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.024053+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "Métropole du Grand Paris",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French public territorial authority where French is the primary operational language.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.080664+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "Schneider Electric",
+      "aliases": [],
+      "score": 4,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Global multinational with English required and an international graduate community connecting multiple worldwide hubs.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.185779+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "D&S Groupe",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French nuclear risk services group with local operations and advert published exclusively in French.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.255463+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "hinq.",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Small-to-medium French industrial company with French-language operations.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.321470+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "ECOUTER VOIR",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French mutualist healthcare/optics retail network with French-only operations and documentation.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.401963+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "Syndicat de l'Orge",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): Local French public river basin union operating entirely in French.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.469622+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "Conseil Départemental du Val d'Oise",
+      "aliases": [],
+      "score": 1,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French departmental public administration with entirely French-language operations and documentation.",
+      "sources": [],
+      "checked_at": "2026-11-06T05:03:41.551965+00:00",
+      "run_id": "2026-11-06-claude-sheet-050125Z-b8568184"
+    },
+    {
+      "company": "Espelia",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French consulting firm focused on local public sector authorities with primary working language in French.",
+      "sources": [],
+      "checked_at": "2026-11-07T13:36:04.813552+00:00",
+      "run_id": "2026-11-07-claude-sheet-133454Z-72256561"
+    },
+    {
+      "company": "PHOTOSOL",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French renewable energy developer with French-language operations.",
+      "sources": [],
+      "checked_at": "2026-11-07T13:36:04.823173+00:00",
+      "run_id": "2026-11-07-claude-sheet-133454Z-72256561"
+    },
+    {
+      "company": "Expertise France",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): International cooperation agency operating in French and English with global partners and institutional donors.",
+      "sources": [],
+      "checked_at": "2026-11-07T13:36:04.832327+00:00",
+      "run_id": "2026-11-07-claude-sheet-133454Z-72256561"
+    },
+    {
+      "company": "Talents Handicap",
+      "aliases": [],
+      "score": 2,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French retail group posting in French, though English is required for reporting duties and international group context.",
+      "sources": [],
+      "checked_at": "2026-11-07T13:36:04.841428+00:00",
+      "run_id": "2026-11-07-claude-sheet-133454Z-72256561"
+    },
+    {
+      "company": "FREE-WORK",
+      "aliases": [],
+      "score": 3,
+      "source_kind": "advert_estimate",
+      "summary": "Estimated from the advert only (no company research): French job posting by a French tech recruiting platform with a professional English requirement.",
+      "sources": [],
+      "checked_at": "2026-11-07T13:36:04.850585+00:00",
+      "run_id": "2026-11-07-claude-sheet-133454Z-72256561"
+    }
+  ]
+}

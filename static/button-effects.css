@@ -1,0 +1,116 @@
+/* Origin fill borrowed from the portfolio button interaction and adapted to
+   Studio's primary actions and Home date-filter pills. */
+.cv-origin-target {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --cv-origin-x: 50%;
+  --cv-origin-y: 50%;
+  --cv-origin-size: 0px;
+  --cv-origin-fill: #385f4d;
+  --cv-origin-fg: #fffef9;
+}
+
+button.button-primary,
+a.button-primary {
+  --cv-origin-fill: #385f4d;
+  --cv-origin-fg: #fffef9;
+}
+
+:root[data-theme="dark"] button.button-primary,
+:root[data-theme="dark"] a.button-primary {
+  --cv-origin-fill: #1b4b35;
+  --cv-origin-fg: #f2f6f3;
+}
+
+:root[data-theme="dark"] .application-list .application-actions .button-primary:is(:hover, :focus-visible, .cv-origin-active) {
+  --cv-origin-fg: #fff;
+  color: #fff;
+  font-weight: 700;
+  background: #1b4b35;
+}
+
+.db-filter-btn {
+  --cv-origin-fill: #264d3e;
+  --cv-origin-fg: #fffef9;
+  transition: background .16s ease, color .18s ease;
+}
+
+:root[data-theme="dark"] .db-filter-btn {
+  --cv-origin-fill: #a8cdb3;
+  --cv-origin-fg: #0b2f24;
+}
+
+.cv-origin-fill {
+  position: absolute;
+  left: var(--cv-origin-x);
+  top: var(--cv-origin-y);
+  width: var(--cv-origin-size);
+  height: var(--cv-origin-size);
+  margin: calc(var(--cv-origin-size) / -2) 0 0 calc(var(--cv-origin-size) / -2);
+  border-radius: 50%;
+  background: var(--cv-origin-fill);
+  pointer-events: none;
+  z-index: -1;
+  transform: scale(0);
+  transition: transform .44s cubic-bezier(.16, 1, .3, 1);
+}
+
+.cv-origin-target.cv-origin-active:not(:disabled):not([aria-disabled="true"]) {
+  color: var(--cv-origin-fg);
+  border-color: var(--cv-origin-fill);
+}
+
+.cv-origin-target.button {
+  transition-property: transform, background-color, border-color, box-shadow, color;
+  transition-duration: 140ms, 150ms, 150ms, 150ms, 220ms;
+  transition-timing-function: var(--ease-studio, ease), ease, ease, ease, ease;
+}
+
+.cv-origin-target.cv-origin-active.button {
+  transition-delay: 0s, 0s, 100ms, 0s, 100ms;
+}
+
+.cv-origin-target.cv-origin-active.db-filter-btn {
+  transition: background .16s ease, color .22s .1s ease;
+}
+
+.cv-origin-target.cv-origin-active .cv-origin-fill {
+  transform: scale(1);
+}
+
+button.button-primary:active:not(:disabled):not([aria-disabled="true"]),
+a.button-primary:active:not([aria-disabled="true"]),
+.db-filter-btn:active:not(:disabled):not([aria-disabled="true"]) {
+  transform: scale(.985);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-origin-target {
+    transition: none !important;
+  }
+
+  .cv-origin-fill {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: inherit;
+    transform: none;
+    opacity: 0;
+    transition: none;
+  }
+
+  .cv-origin-target.cv-origin-active .cv-origin-fill {
+    opacity: 1;
+  }
+
+  button.button-primary:active:not(:disabled):not([aria-disabled="true"]),
+  a.button-primary:active:not([aria-disabled="true"]),
+  .db-filter-btn:active:not(:disabled):not([aria-disabled="true"]) {
+    transform: none !important;
+    background-color: var(--cv-origin-fill);
+    color: var(--cv-origin-fg);
+  }
+}

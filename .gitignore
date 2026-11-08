@@ -1,0 +1,8 @@
+.local/
+__pycache__/
+test-results/
+.DS_Store
+node_modules/
+*.pyc
+.env
+*.key

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="gemini-flash-grad" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4285F4"/>
+      <stop offset="1" stop-color="#9B72CB"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#gemini-flash-grad)" d="M32 3C34.2 22.2 41.8 29.8 61 32 41.8 34.2 34.2 41.8 32 61 29.8 41.8 22.2 34.2 3 32 22.2 29.8 29.8 22.2 32 3Z"/>
+</svg>

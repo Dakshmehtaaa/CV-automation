@@ -1,0 +1,1409 @@
+/* CV Studio — Apply page fills the browser viewport like a desktop app.
+   No page scroll; only the job list (.apply-queue) scrolls internally,
+   and the right detail column (.application-list.apply-focus) scrolls
+   as a fallback when its content overflows.
+   Scoped to .page-apply only. Desktop rules inside the media query.
+   v4: fixes 900-1199px widths (page-heading, 2x2 steps grid, stacked approve-bar,
+       wrapped apply-decide); tighter height <=800px for 1280x720/1366x768
+       (title clamp, chip rows, gauge, head gap).
+   v5: title hidden, Add job in toolbar.
+   v6: fill right column — detail stack becomes a flex column that fills the
+       column height; fact sheet spans full width; advert text scrolls inside
+       its own box; on tall screens (≥820px) the full advert opens automatically
+       and keyword chips show without clamp.
+   v7: flex-direction:column on apply-focus so article fills full width;
+       remove all max-width caps (~76ch) on detail children; details.jd-full
+       uses position:absolute for .jd-full-body so it scrolls inside the
+       details slot reliably; .apply-advert overflow:visible so summary
+       is never clipped at short heights.
+   Backup: Backups/studio-apply-fit-20261028/ */
+
+/* v5: hide the page-heading visually but keep it for screen readers. */
+html body .page-apply > .page-heading {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  margin: 0 !important;
+  padding: 0;
+  border: 0;
+}
+
+/* v5: Add job button sits in the toolbar next to Filters. */
+html body .page-apply .apply-toolbar-tools .manual-add-job {
+  position: relative;
+  flex: none;
+}
+html body .page-apply .apply-toolbar-tools .manual-add-job > summary {
+  /* keeps the existing primary small button look; same height as Filters */
+}
+html body .page-apply .apply-toolbar-tools .manual-add-job > .manual-job-form {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 40;
+  width: min(680px, calc(100vw - 48px));
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  margin-top: 0;
+}
+
+@media (min-width: 900px) and (min-height: 560px) {
+
+  /* 1. Lock html / body height so the page never scrolls. */
+  html:has(.page-apply),
+  html:has(.page-apply) body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* 2. #app and .studio-shell fill the viewport. */
+  html:has(.page-apply) body #app {
+    height: 100%;
+  }
+  html:has(.page-apply) body .studio-shell {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  /* 3. .main-shell: full viewport height, no overflow. */
+  html:has(.page-apply) body .main-shell {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0 !important;
+    overflow: hidden;
+  }
+
+  /* 4. Hide footer on Apply page — reclaim its space. */
+  html:has(.page-apply) body .page-footer {
+    display: none !important;
+  }
+
+  /* 5. main#main: flex column, shrink to fill; tighter top padding (v5: heading hidden). */
+  html:has(.page-apply) body #main {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+    padding-top: 14px !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* 6. .page-apply: flex column, shrink to fill. */
+  html body .page-apply {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* v5: .page-heading is visually hidden by top-level rules above — neutralise earlier sizing here. */
+  html body .page-apply .page-heading,
+  html[data-theme] body .page.page-apply .page-heading {
+    display: none !important;
+    margin: 0 !important;
+    margin-bottom: 0 !important;
+    flex: 0 0 0 !important;
+  }
+  html body .page-apply .page-heading h1,
+  html[data-theme] body .page.page-apply .page-heading h1 {
+    font-size: 0 !important;
+  }
+  html body .page-apply .page-heading .heading-actions,
+  html[data-theme] body .page.page-apply .page-heading .heading-actions {
+    display: none !important;
+  }
+
+  /* #manual-approval: shrink-wraps; if it has content, cap at 30vh. */
+  html body .page-apply #manual-approval {
+    flex: none;
+    max-height: 30vh;
+    overflow: auto;
+  }
+
+  /* .manual-queue-panel: flex:none (often display:none already). */
+  html body .page-apply .manual-queue-panel {
+    flex: none;
+  }
+
+  /* 7. .apply-panel: flex column, fill remaining space. */
+  html body .page-apply .apply-panel {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Toolbar takes only what it needs; always one row, nowrap. */
+  html body .page-apply .apply-toolbar,
+  html[data-theme] body .page.page-apply .apply-toolbar {
+    flex: none;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+  /* Tabs: nowrap, horizontal scroll (hidden scrollbar). */
+  html body .page-apply .apply-tabs,
+  html[data-theme] body .page.page-apply .apply-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  html body .page-apply .apply-tabs::-webkit-scrollbar,
+  html[data-theme] body .page.page-apply .apply-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  /* Search field: flexible but with min-width. */
+  html body .page-apply .apply-toolbar .search-field,
+  html[data-theme] body .page.page-apply .apply-toolbar .search-field {
+    flex: 1 1 140px !important;
+    min-width: 120px !important;
+  }
+  /* Filters button: don't grow or shrink. */
+  html body .page-apply .apply-filter-drawer,
+  html[data-theme] body .page.page-apply .apply-filter-drawer {
+    flex: none !important;
+  }
+
+  /* 8. #application-results: flex column, fill remaining space. */
+  html body .page-apply #application-results {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* .table-footer takes only what it needs. */
+  html body .page-apply .table-footer {
+    flex: none;
+  }
+
+  /* 9. .apply-split: fill remaining height, stretch children.
+     Narrower job-list column on widths < 1280px. */
+  html body .page-apply .apply-split {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    align-items: stretch !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    grid-template-columns: minmax(260px, 300px) minmax(0, 1fr) !important;
+  }
+
+  /* 10. .apply-queue: fill the grid cell, scroll internally. */
+  html body .page-apply .apply-queue {
+    position: static !important;
+    max-height: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow-y: auto;
+  }
+
+  /* v7: 11. Detail column — flex column that fills height; column direction
+     ensures article takes full width (not row which caps at content width). */
+  html body .page-apply .application-list.apply-focus,
+  html[data-theme] body .page.page-apply .application-list.apply-focus {
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 16px 22px 16px !important;
+  }
+
+  /* v7: 12. article.apply-detail — full width flex column, grow to fill.
+     width:100% + max-width:none + align-self:stretch beats any row-layout cap. */
+  html body .page-apply .apply-focus article.apply-detail,
+  html[data-theme] body .page.page-apply .apply-focus article.apply-detail {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    align-self: stretch !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* v7: head, steps, approve-bar, decide — shrink-wrap (flex:none),
+     full width, no max-width cap. */
+  html body .page-apply .apply-detail-head,
+  html body .page-apply .apply-steps,
+  html body .page-apply .approve-bar,
+  html body .page-apply .apply-decide,
+  html[data-theme] body .page.page-apply .apply-detail-head,
+  html[data-theme] body .page.page-apply .apply-steps,
+  html[data-theme] body .page.page-apply .approve-bar,
+  html[data-theme] body .page.page-apply .apply-decide {
+    flex: none !important;
+    max-width: none !important;
+  }
+
+  /* 13. .apply-detail-head: tighter gap, smaller avatar. */
+  html body .page-apply .apply-detail-head {
+    gap: 14px !important;
+    min-height: auto !important;
+  }
+  html body .page-apply .apply-detail-head > .company-avatar {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 11px !important;
+    font-size: 15px !important;
+  }
+  html body .page-apply .apply-detail-head > .company-avatar img {
+    padding: 5px !important;
+  }
+
+  /* 14. Title: clamp to 2 lines, slightly smaller font. */
+  html body .page-apply .apply-detail .application-role-copy > span,
+  html body .page-apply .apply-detail .application-company-only {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 15. Chips: tighter margin. */
+  html body .page-apply .apply-chips {
+    margin-top: 10px !important;
+    gap: 6px !important;
+  }
+  html body .page-apply .apply-chips span {
+    font-size: 11.5px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* 16. .apply-position keyboard hint: hide to save space. */
+  html body .page-apply .apply-position {
+    display: none !important;
+  }
+
+  /* 17. Score sidebar: tighter margin-top. */
+  html body .page-apply .apply-detail .application-card-sidebar {
+    margin-top: 18px !important;
+  }
+  html body .page-apply .apply-detail .rating-summary {
+    padding: 10px 16px !important;
+  }
+  html body .page-apply .apply-detail .rating-details {
+    padding: 0 16px 10px !important;
+  }
+  html body .page-apply .apply-detail .readiness-val {
+    font-size: 20px !important;
+  }
+  html body .page-apply .apply-detail .rating-gauge:nth-child(2) .readiness-val {
+    font-size: 28px !important;
+  }
+
+  /* 18. .apply-steps: always ONE row at all widths >= 900px.
+     Use html[data-theme] prefix + !important to beat apply-minimal.css @media (max-width:1100px). */
+  html body .page-apply .apply-steps,
+  html[data-theme] body .page.page-apply .apply-steps {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    margin-top: 12px !important;
+  }
+  html body .page-apply .apply-step,
+  html body .page-apply .apply-steps .application-copy-button,
+  html[data-theme] body .page.page-apply .apply-step,
+  html[data-theme] body .page.page-apply .apply-steps .application-copy-button {
+    height: 50px !important;
+    min-width: 0 !important;
+    padding: 0 12px !important;
+    border-radius: 10px !important;
+    font-size: 13px !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+  }
+  /* Button text ellipsis. */
+  html body .page-apply .apply-step-copy strong,
+  html[data-theme] body .page.page-apply .apply-step-copy strong {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  html body .page-apply .apply-step .icon,
+  html body .page-apply .apply-steps .application-copy-button .icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  html body .page-apply .apply-step-copy strong {
+    font-size: 13px !important;
+  }
+  html body .page-apply .apply-step-copy small {
+    font-size: 11px !important;
+  }
+  html body .page-apply .apply-step kbd,
+  html body .page-apply .apply-steps .application-copy-button kbd {
+    display: none !important;
+  }
+
+  /* 19. .apply-decide: ONE row at all widths >= 900px.
+     Use html[data-theme] prefix + !important to beat apply-minimal.css @media (max-width:1100px). */
+  html body .page-apply .apply-decide,
+  html[data-theme] body .page.page-apply .apply-decide {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) repeat(5, auto) !important;
+    grid-auto-flow: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 10px !important;
+    padding: 10px 14px 10px 14px !important;
+    border-radius: 12px !important;
+  }
+  /* "Did you apply?" label: ellipsis 1 line. */
+  html body .page-apply .apply-decide > p,
+  html[data-theme] body .page.page-apply .apply-decide > p {
+    font-size: 12.5px !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+  }
+  html body .page-apply .apply-decide > p strong,
+  html[data-theme] body .page.page-apply .apply-decide > p strong {
+    font-size: 13.5px !important;
+  }
+  html body .page-apply .apply-decide-button,
+  html body .page-apply .apply-decide .application-wont-apply,
+  html[data-theme] body .page.page-apply .apply-decide-button,
+  html[data-theme] body .page.page-apply .apply-decide .application-wont-apply {
+    height: 32px !important;
+    padding: 0 12px !important;
+    border-radius: 8px !important;
+    font-size: 12.5px !important;
+    gap: 6px !important;
+    flex: none !important;
+  }
+  html body .page-apply .apply-decide-button .icon,
+  html[data-theme] body .page.page-apply .apply-decide-button .icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  html body .page-apply .apply-decide-button kbd,
+  html body .page-apply .application-wont-apply kbd,
+  html[data-theme] body .page.page-apply .apply-decide-button kbd,
+  html[data-theme] body .page.page-apply .application-wont-apply kbd {
+    display: none !important;
+  }
+  /* Status field can shrink to min 96px. */
+  html body .page-apply .apply-status-field .application-status,
+  html[data-theme] body .page.page-apply .apply-status-field .application-status {
+    height: 32px !important;
+    min-width: 96px !important;
+    max-width: 140px !important;
+    border-radius: 8px !important;
+    font-size: 12.5px !important;
+  }
+  /* .apply-more: inline on the same row. */
+  html body .page-apply .apply-more,
+  html[data-theme] body .page.page-apply .apply-more {
+    display: inline-flex !important;
+  }
+  html body .page-apply .apply-more > summary,
+  html[data-theme] body .page.page-apply .apply-more > summary {
+    height: 32px !important;
+    padding: 0 10px !important;
+    border-radius: 8px !important;
+    font-size: 12.5px !important;
+    gap: 5px !important;
+  }
+
+  /* 20. .approve-bar: single compact row. */
+  html body .page-apply .approve-bar,
+  html[data-theme] body .page.page-apply .approve-bar {
+    padding: 8px 12px !important;
+    margin-top: 10px !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  html body .page-apply .approve-bar p {
+    margin: 0 !important;
+    gap: 2px !important;
+  }
+  /* Description span: 1 line ellipsis. */
+  html body .page-apply .approve-bar span,
+  html[data-theme] body .page.page-apply .approve-bar span {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: 12px !important;
+  }
+  html body .page-apply .approve-bar strong,
+  html[data-theme] body .page.page-apply .approve-bar strong {
+    font-size: 13px !important;
+  }
+  html body .page-apply .approve-bar-actions,
+  html[data-theme] body .page.page-apply .approve-bar-actions {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 6px !important;
+    justify-content: flex-end !important;
+  }
+  html body .page-apply .approve-bar-actions .button,
+  html[data-theme] body .page.page-apply .approve-bar-actions .button {
+    height: 30px !important;
+    font-size: 12px !important;
+    padding: 0 10px !important;
+  }
+
+  /* v7: 21. .apply-advert — flex grow, fill remaining height; full width;
+     overflow:visible so the jd-full summary is never clipped. */
+  html body .page-apply .apply-advert,
+  html[data-theme] body .page.page-apply .apply-advert {
+    margin-top: 12px !important;
+    border-radius: 12px !important;
+    max-width: none !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+  html body .page-apply .apply-advert h3,
+  html[data-theme] body .page.page-apply .apply-advert h3 {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+  /* v7: .apply-advert-body — flex grow so jd-full can fill the rest;
+     overflow:visible so content is never clipped. */
+  html body .page-apply .apply-advert-body,
+  html[data-theme] body .page.page-apply .apply-advert-body {
+    padding: 12px 14px 14px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    max-width: none !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+
+  /* v7: 21. .jd-sheet — shrink-wrap (flex:none), no max-width cap. */
+  html body .page-apply .jd-sheet,
+  html[data-theme] body .page.page-apply .jd-sheet {
+    flex: none !important;
+    max-width: none !important;
+  }
+  html body .page-apply .jd-sheet.has-gauge {
+    grid-template-columns: 120px minmax(0, 1fr) !important;
+  }
+  html body .page-apply .jd-gauge {
+    padding: 10px 8px !important;
+  }
+  html body .page-apply .fit-gauge {
+    width: 88px !important;
+    height: 88px !important;
+  }
+  html body .page-apply .fit-gauge > span {
+    font-size: 22px !important;
+  }
+  html body .page-apply .fit-gauge > span small {
+    font-size: 11px !important;
+  }
+  html body .page-apply .jd-fact {
+    padding: 7px 12px !important;
+    gap: 8px !important;
+  }
+  /* v6: Keyword chips inside fact sheet: clamp on short screens only;
+     removed in the min-height:820px block below so all chips show on tall screens. */
+  html body .page-apply .jd-fact .jd-chips,
+  html body .page-apply .jd-fact-body .jd-chips,
+  html body .page-apply .jd-fact-body {
+    max-height: 56px !important;
+    overflow: hidden !important;
+  }
+
+  /* v7: 22. details.jd-full — constrained scrolling using position:absolute
+     for .jd-full-body because <details> internal slot ignores flex.
+     Robust method: summary is position:relative; body is absolutely positioned
+     below the summary, filling the remaining height. */
+  html body .page-apply details.jd-full,
+  html[data-theme] body .page.page-apply details.jd-full {
+    max-width: none !important;
+  }
+  /* Open: block with overflow:hidden so the absolute body stays inside. */
+  html body .page-apply details.jd-full[open],
+  html[data-theme] body .page.page-apply details.jd-full[open] {
+    flex: 1 1 auto !important;
+    min-height: 40px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: block !important;
+    margin-top: 8px !important;
+  }
+  /* Summary sits on top. */
+  html body .page-apply details.jd-full[open] > summary,
+  html[data-theme] body .page.page-apply details.jd-full[open] > summary {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  /* Body: absolutely positioned below the summary (top matches summary height).
+     Fills left/right/top/bottom of the details container; scrolls internally. */
+  html body .page-apply details.jd-full[open] > .jd-full-body,
+  html[data-theme] body .page.page-apply details.jd-full[open] > .jd-full-body {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 40px !important;
+    bottom: 0 !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+  }
+  /* Closed: shrink-wrap. */
+  html body .page-apply details.jd-full:not([open]),
+  html[data-theme] body .page.page-apply details.jd-full:not([open]) {
+    flex: none !important;
+    margin-top: 8px !important;
+  }
+  html body .page-apply .jd-full > summary {
+    height: 36px !important;
+    font-size: 12.5px !important;
+    padding: 0 12px !important;
+  }
+
+  /* 23. .apply-keys: hide keyboard hints to save space. */
+  html body .page-apply .apply-keys {
+    display: none !important;
+  }
+
+  /* ── v6: Tall screens (≥820px) — show all keyword chips without clamp ── */
+  @media (min-height: 820px) {
+    html body .page-apply .jd-fact .jd-chips,
+    html body .page-apply .jd-fact-body .jd-chips,
+    html body .page-apply .jd-fact-body {
+      max-height: none !important;
+      overflow: visible !important;
+    }
+  }
+
+  /* ── Height-tier refinements for shorter viewports ── */
+
+  @media (max-height: 820px) {
+    /* Smaller title font. */
+    html body .page-apply .apply-detail .application-role-copy > span,
+    html body .page-apply .apply-detail .application-company-only,
+    html[data-theme] body .page.page-apply .apply-detail .application-role-copy > span,
+    html[data-theme] body .page.page-apply .apply-detail .application-company-only {
+      font-size: 20px !important;
+    }
+    /* Smaller gauge ring. */
+    html body .page-apply .fit-gauge,
+    html[data-theme] body .page.page-apply .fit-gauge {
+      width: 76px !important;
+      height: 76px !important;
+    }
+    html body .page-apply .fit-gauge > span,
+    html[data-theme] body .page.page-apply .fit-gauge > span {
+      font-size: 19px !important;
+    }
+    html body .page-apply .jd-sheet.has-gauge,
+    html[data-theme] body .page.page-apply .jd-sheet.has-gauge {
+      grid-template-columns: 104px minmax(0, 1fr) !important;
+    }
+    /* Tighter score gauges. */
+    html body .page-apply .apply-detail .rating-summary {
+      padding: 8px 12px !important;
+    }
+    html body .page-apply .apply-detail .rating-details {
+      padding: 0 12px 8px !important;
+    }
+    html body .page-apply .apply-detail .readiness-val {
+      font-size: 18px !important;
+    }
+    html body .page-apply .apply-detail .rating-gauge:nth-child(2) .readiness-val {
+      font-size: 24px !important;
+    }
+    /* Tighter steps. */
+    html body .page-apply .apply-step,
+    html body .page-apply .apply-steps .application-copy-button,
+    html[data-theme] body .page.page-apply .apply-step,
+    html[data-theme] body .page.page-apply .apply-steps .application-copy-button {
+      height: 44px !important;
+      font-size: 12.5px !important;
+    }
+    html body .page-apply .apply-step-copy strong,
+    html[data-theme] body .page.page-apply .apply-step-copy strong {
+      font-size: 12.5px !important;
+    }
+    /* Tighter decide. */
+    html body .page-apply .apply-decide,
+    html[data-theme] body .page.page-apply .apply-decide {
+      padding: 8px 12px 8px 12px !important;
+      gap: 6px !important;
+      margin-top: 8px !important;
+    }
+    html body .page-apply .apply-decide > p,
+    html[data-theme] body .page.page-apply .apply-decide > p {
+      font-size: 11.5px !important;
+    }
+    html body .page-apply .apply-decide > p strong,
+    html[data-theme] body .page.page-apply .apply-decide > p strong {
+      font-size: 12.5px !important;
+    }
+    html body .page-apply .apply-decide-button,
+    html body .page-apply .apply-decide .application-wont-apply,
+    html[data-theme] body .page.page-apply .apply-decide-button,
+    html[data-theme] body .page.page-apply .apply-decide .application-wont-apply {
+      height: 30px !important;
+      font-size: 12px !important;
+      padding: 0 10px !important;
+    }
+    html body .page-apply .apply-status-field .application-status,
+    html[data-theme] body .page.page-apply .apply-status-field .application-status {
+      height: 30px !important;
+      font-size: 12px !important;
+    }
+    html body .page-apply .apply-more > summary,
+    html[data-theme] body .page.page-apply .apply-more > summary {
+      height: 30px !important;
+      font-size: 12px !important;
+    }
+    /* Tighter advert. */
+    html body .page-apply .apply-advert,
+    html[data-theme] body .page.page-apply .apply-advert {
+      margin-top: 8px !important;
+    }
+    html body .page-apply .apply-advert h3,
+    html[data-theme] body .page.page-apply .apply-advert h3 {
+      padding: 8px 12px !important;
+      font-size: 12px !important;
+    }
+    html body .page-apply .apply-advert-body,
+    html[data-theme] body .page.page-apply .apply-advert-body {
+      padding: 8px 10px 10px !important;
+      font-size: 12.5px !important;
+      line-height: 1.45 !important;
+    }
+    html body .page-apply details.jd-full,
+    html[data-theme] body .page.page-apply details.jd-full {
+      margin-top: 6px !important;
+    }
+    html body .page-apply .jd-full > summary,
+    html[data-theme] body .page.page-apply .jd-full > summary {
+      height: 32px !important;
+      font-size: 12px !important;
+    }
+    /* Tighter head. */
+    html body .page-apply .apply-detail-head,
+    html[data-theme] body .page.page-apply .apply-detail-head {
+      gap: 10px !important;
+    }
+    html body .page-apply .apply-detail-head > .company-avatar,
+    html[data-theme] body .page.page-apply .apply-detail-head > .company-avatar {
+      width: 38px !important;
+      height: 38px !important;
+    }
+    html body .page-apply .apply-chips,
+    html[data-theme] body .page.page-apply .apply-chips {
+      margin-top: 6px !important;
+      gap: 5px !important;
+    }
+    html body .page-apply .apply-chips span,
+    html[data-theme] body .page.page-apply .apply-chips span {
+      font-size: 11px !important;
+      padding: 2px 6px !important;
+    }
+    html body .page-apply .apply-detail .application-card-sidebar {
+      margin-top: 12px !important;
+    }
+    html body .page-apply .apply-steps,
+    html[data-theme] body .page.page-apply .apply-steps {
+      margin-top: 8px !important;
+      gap: 8px !important;
+    }
+    /* jd-fact padding at <=820px. */
+    html body .page-apply .jd-fact,
+    html[data-theme] body .page.page-apply .jd-fact {
+      padding: 6px 12px !important;
+    }
+  }
+
+  @media (max-height: 720px) {
+    /* Even tighter for 720p and below. */
+    /* v5: .page-heading already hidden — neutralise earlier sizing. */
+    html body .page-apply .page-heading,
+    html[data-theme] body .page.page-apply .page-heading {
+      margin-bottom: 0 !important;
+    }
+    html body .page-apply .page-heading h1,
+    html[data-theme] body .page.page-apply .page-heading h1 {
+      font-size: 0 !important;
+    }
+    html body .page-apply .apply-detail .application-role-copy > span,
+    html body .page-apply .apply-detail .application-company-only,
+    html[data-theme] body .page.page-apply .apply-detail .application-role-copy > span,
+    html[data-theme] body .page.page-apply .apply-detail .application-company-only {
+      font-size: 18px !important;
+    }
+    html body .page-apply .apply-detail-head > .company-avatar,
+    html[data-theme] body .page.page-apply .apply-detail-head > .company-avatar {
+      width: 34px !important;
+      height: 34px !important;
+      border-radius: 8px !important;
+      font-size: 12px !important;
+    }
+    html body .page-apply .apply-detail-head > .company-avatar img,
+    html[data-theme] body .page.page-apply .apply-detail-head > .company-avatar img {
+      padding: 4px !important;
+    }
+    html body .page-apply .apply-detail-head,
+    html[data-theme] body .page.page-apply .apply-detail-head {
+      gap: 8px !important;
+    }
+    html body .page-apply .apply-chips,
+    html[data-theme] body .page.page-apply .apply-chips {
+      margin-top: 4px !important;
+    }
+    html body .page-apply .apply-chips span,
+    html[data-theme] body .page.page-apply .apply-chips span {
+      font-size: 10.5px !important;
+      padding: 2px 5px !important;
+    }
+    html body .page-apply .apply-detail .application-card-sidebar {
+      margin-top: 8px !important;
+    }
+    html body .page-apply .apply-detail .rating-summary {
+      padding: 6px 10px !important;
+    }
+    html body .page-apply .apply-detail .rating-details {
+      padding: 0 10px 6px !important;
+      font-size: 11px !important;
+    }
+    html body .page-apply .apply-detail .readiness-val {
+      font-size: 16px !important;
+    }
+    html body .page-apply .apply-detail .rating-gauge:nth-child(2) .readiness-val {
+      font-size: 22px !important;
+    }
+    html body .page-apply .apply-step,
+    html body .page-apply .apply-steps .application-copy-button,
+    html[data-theme] body .page.page-apply .apply-step,
+    html[data-theme] body .page.page-apply .apply-steps .application-copy-button {
+      height: 40px !important;
+      padding: 0 10px !important;
+      gap: 6px !important;
+    }
+    html body .page-apply .apply-step .icon,
+    html body .page-apply .apply-steps .application-copy-button .icon,
+    html[data-theme] body .page.page-apply .apply-step .icon,
+    html[data-theme] body .page.page-apply .apply-steps .application-copy-button .icon {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    html body .page-apply .apply-step-copy strong,
+    html[data-theme] body .page.page-apply .apply-step-copy strong {
+      font-size: 12px !important;
+    }
+    html body .page-apply .apply-step-copy small,
+    html[data-theme] body .page.page-apply .apply-step-copy small {
+      font-size: 10px !important;
+    }
+    html body .page-apply .apply-steps,
+    html[data-theme] body .page.page-apply .apply-steps {
+      margin-top: 6px !important;
+      gap: 6px !important;
+    }
+    html body .page-apply .apply-decide,
+    html[data-theme] body .page.page-apply .apply-decide {
+      margin-top: 6px !important;
+      padding: 6px 10px 6px 10px !important;
+      gap: 5px !important;
+    }
+    html body .page-apply .apply-decide > p,
+    html[data-theme] body .page.page-apply .apply-decide > p {
+      font-size: 11px !important;
+    }
+    html body .page-apply .apply-decide > p strong,
+    html[data-theme] body .page.page-apply .apply-decide > p strong {
+      font-size: 12px !important;
+    }
+    html body .page-apply .apply-decide-button,
+    html body .page-apply .apply-decide .application-wont-apply,
+    html[data-theme] body .page.page-apply .apply-decide-button,
+    html[data-theme] body .page.page-apply .apply-decide .application-wont-apply {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      padding: 0 8px !important;
+      gap: 4px !important;
+    }
+    html body .page-apply .apply-decide-button .icon,
+    html[data-theme] body .page.page-apply .apply-decide-button .icon {
+      width: 13px !important;
+      height: 13px !important;
+    }
+    html body .page-apply .apply-status-field .application-status,
+    html[data-theme] body .page.page-apply .apply-status-field .application-status {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      min-width: 96px !important;
+    }
+    html body .page-apply .apply-more > summary,
+    html[data-theme] body .page.page-apply .apply-more > summary {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      padding: 0 8px !important;
+    }
+    html body .page-apply .apply-advert,
+    html[data-theme] body .page.page-apply .apply-advert {
+      margin-top: 6px !important;
+      border-radius: 10px !important;
+    }
+    html body .page-apply .apply-advert h3,
+    html[data-theme] body .page.page-apply .apply-advert h3 {
+      padding: 6px 10px !important;
+      font-size: 11.5px !important;
+    }
+    html body .page-apply .apply-advert-body,
+    html[data-theme] body .page.page-apply .apply-advert-body {
+      padding: 6px 8px 8px !important;
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+    }
+    html body .page-apply .jd-sheet.has-gauge,
+    html[data-theme] body .page.page-apply .jd-sheet.has-gauge {
+      grid-template-columns: 92px minmax(0, 1fr) !important;
+    }
+    html body .page-apply .fit-gauge,
+    html[data-theme] body .page.page-apply .fit-gauge {
+      width: 68px !important;
+      height: 68px !important;
+    }
+    html body .page-apply .fit-gauge > span,
+    html[data-theme] body .page.page-apply .fit-gauge > span {
+      font-size: 17px !important;
+    }
+    html body .page-apply .jd-fact,
+    html[data-theme] body .page.page-apply .jd-fact {
+      padding: 5px 10px !important;
+      gap: 6px !important;
+      font-size: 12px !important;
+    }
+    html body .page-apply details.jd-full,
+    html[data-theme] body .page.page-apply details.jd-full {
+      margin-top: 4px !important;
+    }
+    html body .page-apply .jd-full > summary,
+    html[data-theme] body .page.page-apply .jd-full > summary {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      padding: 0 10px !important;
+    }
+    html body .page-apply .application-list.apply-focus,
+    html[data-theme] body .page.page-apply .application-list.apply-focus {
+      padding: 12px 16px 12px !important;
+    }
+  }
+
+  /* ── v4: 900-1199px width — fix layout broken by v3 grid ── */
+  @media (min-width: 900px) and (max-width: 1199px) {
+
+    /* v5: .page-heading already hidden — neutralise v4 flex rules. */
+    html body .page-apply .page-heading,
+    html[data-theme] body .page.page-apply .page-heading {
+      display: none !important;
+      margin: 0 !important;
+    }
+    html body .page-apply .page-heading h1,
+    html[data-theme] body .page.page-apply .page-heading h1 {
+      font-size: 0 !important;
+    }
+
+    /* v4 P1 — .apply-steps: 2x2 grid at 900-1199px. */
+    html body .page-apply .apply-steps,
+    html[data-theme] body .page.page-apply .apply-steps {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    /* .motivation-buttons wrapper: display contents so children join the grid. */
+    html body .page-apply .apply-steps .motivation-buttons,
+    html[data-theme] body .page.page-apply .apply-steps .motivation-buttons {
+      display: contents !important;
+    }
+    html body .page-apply .apply-step,
+    html body .page-apply .apply-steps .application-copy-button,
+    html[data-theme] body .page.page-apply .apply-step,
+    html[data-theme] body .page.page-apply .apply-steps .application-copy-button {
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+    html body .page-apply .apply-step-copy strong,
+    html[data-theme] body .page.page-apply .apply-step-copy strong {
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    /* v4 P1 — .approve-bar: stack vertically at 900-1199px. */
+    html body .page-apply .approve-bar,
+    html[data-theme] body .page.page-apply .approve-bar {
+      grid-template-columns: 1fr !important;
+    }
+    html body .page-apply .approve-bar-actions,
+    html[data-theme] body .page.page-apply .approve-bar-actions {
+      flex-wrap: nowrap !important;
+      justify-content: flex-start !important;
+    }
+
+    /* v4 P1 — .apply-decide: wrap to 2 rows at 900-1199px.
+       Row 1: "Did you apply?" + Mark applied + Won't apply
+       Row 2: Apply later + status select + "..." */
+    html body .page-apply .apply-decide,
+    html[data-theme] body .page.page-apply .apply-decide {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+    }
+    /* "Did you apply?" label stays on row 1, no flex-grow. */
+    html body .page-apply .apply-decide > p,
+    html[data-theme] body .page.page-apply .apply-decide > p {
+      flex: 0 0 auto !important;
+      white-space: nowrap !important;
+    }
+    /* Buttons: nowrap labels, shrink to fit. */
+    html body .page-apply .apply-decide-button,
+    html body .page-apply .apply-decide .application-wont-apply,
+    html[data-theme] body .page.page-apply .apply-decide-button,
+    html[data-theme] body .page.page-apply .apply-decide .application-wont-apply {
+      white-space: nowrap !important;
+      flex: 0 0 auto !important;
+    }
+    html body .page-apply .apply-decide-button strong,
+    html body .page-apply .apply-decide .application-wont-apply strong,
+    html[data-theme] body .page.page-apply .apply-decide-button strong,
+    html[data-theme] body .page.page-apply .apply-decide .application-wont-apply strong {
+      white-space: nowrap !important;
+    }
+    /* Status field and ... button on row 2. */
+    html body .page-apply .apply-status-field,
+    html[data-theme] body .page.page-apply .apply-status-field {
+      flex: 0 0 auto !important;
+    }
+    html body .page-apply .apply-more,
+    html[data-theme] body .page.page-apply .apply-more {
+      flex: 0 0 auto !important;
+    }
+  }
+
+  /* ── Below 1200px width: tighter decide buttons ── */
+  @media (max-width: 1199px) {
+    html body .page-apply .apply-decide-button,
+    html body .page-apply .apply-decide .application-wont-apply,
+    html[data-theme] body .page.page-apply .apply-decide-button,
+    html[data-theme] body .page.page-apply .apply-decide .application-wont-apply {
+      padding: 0 8px !important;
+      font-size: 12.5px !important;
+    }
+    html body .page-apply .apply-status-field .application-status,
+    html[data-theme] body .page.page-apply .apply-status-field .application-status {
+      min-width: 96px !important;
+    }
+  }
+
+  /* ── v4: height <= 800px AND width >= 1200px — fix 70-80px overflow on 1280x720 / 1366x768 ── */
+  @media (min-width: 1200px) and (max-height: 800px) {
+    /* Detail title: 1 line, ellipsis, 20px. */
+    html body .page-apply .apply-detail .application-role-copy > span,
+    html body .page-apply .apply-detail .application-company-only,
+    html[data-theme] body .page.page-apply .apply-detail .application-role-copy > span,
+    html[data-theme] body .page.page-apply .apply-detail .application-company-only {
+      font-size: 20px !important;
+      line-height: 1.2 !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 1 !important;
+      -webkit-box-orient: vertical !important;
+      overflow: hidden !important;
+    }
+    /* Each keyword chip row: 1 line max (max-height of one chip row, overflow hidden). */
+    html body .page-apply .jd-fact .jd-chips,
+    html body .page-apply .jd-fact-body .jd-chips,
+    html body .page-apply .jd-fact-body,
+    html[data-theme] body .page.page-apply .jd-fact .jd-chips,
+    html[data-theme] body .page.page-apply .jd-fact-body .jd-chips,
+    html[data-theme] body .page.page-apply .jd-fact-body {
+      max-height: 24px !important;
+      overflow: hidden !important;
+    }
+    html[data-theme] body .page.page-apply .jd-fact .jd-chips { margin: 0 !important; }
+    html[data-theme] body .page.page-apply .application-list.apply-focus { padding-bottom: 10px !important; }
+    /* .jd-gauge ring ~76px. */
+    html body .page-apply .fit-gauge,
+    html[data-theme] body .page.page-apply .fit-gauge {
+      width: 76px !important;
+      height: 76px !important;
+    }
+    html body .page-apply .fit-gauge > span,
+    html[data-theme] body .page.page-apply .fit-gauge > span {
+      font-size: 19px !important;
+    }
+    html body .page-apply .jd-sheet.has-gauge,
+    html[data-theme] body .page.page-apply .jd-sheet.has-gauge {
+      grid-template-columns: 104px minmax(0, 1fr) !important;
+    }
+    /* .jd-fact padding 5px 12px. */
+    html body .page-apply .jd-fact,
+    html[data-theme] body .page.page-apply .jd-fact {
+      padding: 5px 12px !important;
+    }
+    /* .apply-detail-head gap 6px vertical. */
+    html body .page-apply .apply-detail-head,
+    html[data-theme] body .page.page-apply .apply-detail-head {
+      gap: 6px !important;
+    }
+    /* Chips/meta line margin-top 2px. */
+    html body .page-apply .apply-chips,
+    html[data-theme] body .page.page-apply .apply-chips {
+      margin-top: 2px !important;
+    }
+  }
+
+  /* ── Height <= 700px: ultra-compact for 1024x640 etc. ── */
+  @media (max-height: 700px) {
+    /* Avatar 36px. */
+    html body .page-apply .apply-detail-head > .company-avatar,
+    html[data-theme] body .page.page-apply .apply-detail-head > .company-avatar {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 9px !important;
+      font-size: 11px !important;
+    }
+    html body .page-apply .apply-detail-head > .company-avatar img,
+    html[data-theme] body .page.page-apply .apply-detail-head > .company-avatar img {
+      padding: 4px !important;
+    }
+    html body .page-apply .apply-detail-head,
+    html[data-theme] body .page.page-apply .apply-detail-head {
+      gap: 8px !important;
+    }
+    /* Title 19px. */
+    html body .page-apply .apply-detail .application-role-copy > span,
+    html body .page-apply .apply-detail .application-company-only,
+    html[data-theme] body .page.page-apply .apply-detail .application-role-copy > span,
+    html[data-theme] body .page.page-apply .apply-detail .application-company-only {
+      font-size: 19px !important;
+    }
+    /* Chips/meta: 1 line ellipsis. */
+    html body .page-apply .apply-chips,
+    html[data-theme] body .page.page-apply .apply-chips {
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+      margin-top: 4px !important;
+      gap: 4px !important;
+    }
+    html body .page-apply .apply-chips span,
+    html[data-theme] body .page.page-apply .apply-chips span {
+      font-size: 10.5px !important;
+      padding: 2px 5px !important;
+    }
+    html body .page-apply .apply-detail .application-date-facts,
+    html[data-theme] body .page.page-apply .apply-detail .application-date-facts {
+      overflow: hidden !important;
+      white-space: nowrap !important;
+      text-overflow: ellipsis !important;
+      font-size: 11px !important;
+    }
+    /* Gauge ring ~80px. */
+    html body .page-apply .fit-gauge,
+    html[data-theme] body .page.page-apply .fit-gauge {
+      width: 80px !important;
+      height: 80px !important;
+    }
+    html body .page-apply .fit-gauge > span,
+    html[data-theme] body .page.page-apply .fit-gauge > span {
+      font-size: 20px !important;
+    }
+    html body .page-apply .jd-sheet.has-gauge,
+    html[data-theme] body .page.page-apply .jd-sheet.has-gauge {
+      grid-template-columns: 100px minmax(0, 1fr) !important;
+    }
+    html body .page-apply .jd-gauge,
+    html[data-theme] body .page.page-apply .jd-gauge {
+      padding: 8px 6px !important;
+    }
+    /* Tighter jd-fact padding at <=820px heights (includes 700px). */
+    html body .page-apply .jd-fact,
+    html[data-theme] body .page.page-apply .jd-fact {
+      padding: 6px 12px !important;
+      gap: 6px !important;
+    }
+    /* v5: .page-heading already hidden — neutralise earlier sizing. */
+    html body .page-apply .page-heading,
+    html[data-theme] body .page.page-apply .page-heading {
+      margin-bottom: 0 !important;
+    }
+    html body .page-apply .page-heading h1,
+    html[data-theme] body .page.page-apply .page-heading h1 {
+      font-size: 0 !important;
+    }
+    /* Tighter steps. */
+    html body .page-apply .apply-step,
+    html body .page-apply .apply-steps .application-copy-button,
+    html[data-theme] body .page.page-apply .apply-step,
+    html[data-theme] body .page.page-apply .apply-steps .application-copy-button {
+      height: 38px !important;
+      padding: 0 8px !important;
+      font-size: 12px !important;
+      gap: 6px !important;
+    }
+    html body .page-apply .apply-step .icon,
+    html body .page-apply .apply-steps .application-copy-button .icon,
+    html[data-theme] body .page.page-apply .apply-step .icon,
+    html[data-theme] body .page.page-apply .apply-steps .application-copy-button .icon {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    html body .page-apply .apply-steps,
+    html[data-theme] body .page.page-apply .apply-steps {
+      margin-top: 6px !important;
+      gap: 6px !important;
+    }
+    /* Tighter decide. */
+    html body .page-apply .apply-decide,
+    html[data-theme] body .page.page-apply .apply-decide {
+      margin-top: 6px !important;
+      padding: 6px 10px 6px 10px !important;
+      gap: 5px !important;
+    }
+    html body .page-apply .apply-decide > p,
+    html[data-theme] body .page.page-apply .apply-decide > p {
+      font-size: 11px !important;
+    }
+    html body .page-apply .apply-decide-button,
+    html body .page-apply .apply-decide .application-wont-apply,
+    html[data-theme] body .page.page-apply .apply-decide-button,
+    html[data-theme] body .page.page-apply .apply-decide .application-wont-apply {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      padding: 0 8px !important;
+      gap: 4px !important;
+    }
+    html body .page-apply .apply-status-field .application-status,
+    html[data-theme] body .page.page-apply .apply-status-field .application-status {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      min-width: 96px !important;
+    }
+    html body .page-apply .apply-more > summary,
+    html[data-theme] body .page.page-apply .apply-more > summary {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      padding: 0 8px !important;
+    }
+    /* Tighter advert. */
+    html body .page-apply .apply-advert,
+    html[data-theme] body .page.page-apply .apply-advert {
+      margin-top: 6px !important;
+    }
+    html body .page-apply .apply-advert h3,
+    html[data-theme] body .page.page-apply .apply-advert h3 {
+      padding: 6px 10px !important;
+      font-size: 11.5px !important;
+    }
+    html body .page-apply .apply-advert-body,
+    html[data-theme] body .page.page-apply .apply-advert-body {
+      padding: 6px 8px 8px !important;
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+    }
+    /* Tighter jd-full. */
+    html body .page-apply details.jd-full,
+    html[data-theme] body .page.page-apply details.jd-full {
+      margin-top: 4px !important;
+    }
+    html body .page-apply .jd-full > summary,
+    html[data-theme] body .page.page-apply .jd-full > summary {
+      height: 28px !important;
+      font-size: 11.5px !important;
+      padding: 0 10px !important;
+    }
+    /* Tighter detail column padding. */
+    html body .page-apply .application-list.apply-focus,
+    html[data-theme] body .page.page-apply .application-list.apply-focus {
+      padding: 10px 14px 10px !important;
+    }
+    /* Tighter approve-bar. */
+    html body .page-apply .approve-bar,
+    html[data-theme] body .page.page-apply .approve-bar {
+      padding: 6px 10px !important;
+      margin-top: 8px !important;
+      gap: 6px !important;
+    }
+    html body .page-apply .approve-bar strong,
+    html[data-theme] body .page.page-apply .approve-bar strong {
+      font-size: 12px !important;
+    }
+    html body .page-apply .approve-bar span,
+    html[data-theme] body .page.page-apply .approve-bar span {
+      font-size: 11px !important;
+    }
+    html body .page-apply .approve-bar-actions .button,
+    html[data-theme] body .page.page-apply .approve-bar-actions .button {
+      height: 28px !important;
+      font-size: 11px !important;
+    }
+    /* Tighter toolbar. */
+    html body .page-apply .apply-toolbar,
+    html[data-theme] body .page.page-apply .apply-toolbar {
+      padding: 6px 10px !important;
+      gap: 6px !important;
+    }
+  }
+}
+
+/* v7b: the advert card had a fixed 520px height cap from an older layer; let it fill the column. */
+@media (min-width: 900px) and (min-height: 560px) {
+  html[data-theme] body .page.page-apply .apply-advert-body { height: auto !important; max-height: none !important; }
+}
+
+/* v8 (3 Nov, Daksh). Backup: Backups/studio-apply-fixes-20261103/
+   1. Copy cover letter button: same 36px box as the other step buttons; label ellipsises.
+   2. Long job titles never change the layout: title, company and chips stay one line with "…".
+   3. List fit % only shows on hover / keyboard focus; sort order unchanged. */
+html[data-theme] body .page.page-apply .apply-steps .apply-step,
+html[data-theme] body .page.page-apply .apply-steps .application-copy-button {
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 0 12px 0 5px !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  justify-content: flex-start !important;
+}
+html[data-theme] body .page.page-apply .apply-steps .motivation-buttons { display: contents !important; }
+html[data-theme] body .page.page-apply .apply-step-copy { min-width: 0; overflow: hidden; }
+html[data-theme] body .page.page-apply .apply-step-copy strong {
+  display: block; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important;
+}
+
+html[data-theme] body .page.page-apply .apply-detail-head,
+html[data-theme] body .page.page-apply .apply-detail-title,
+html[data-theme] body .page.page-apply .apply-detail-title .application-role,
+html[data-theme] body .page.page-apply .apply-detail-title .application-role-copy { min-width: 0 !important; max-width: 100% !important; }
+html[data-theme] body .page.page-apply .apply-detail-title .application-role { display: block !important; width: 100% !important; overflow: hidden !important; }
+html[data-theme] body .page.page-apply .apply-detail .application-role-copy > strong,
+html[data-theme] body .page.page-apply .apply-detail .application-role-copy > span,
+html[data-theme] body .page.page-apply .apply-detail .application-company-only {
+  display: block !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: unset !important;
+}
+html[data-theme] body .page.page-apply .apply-detail .apply-chips { flex-wrap: nowrap !important; overflow: hidden !important; min-width: 0; }
+html[data-theme] body .page.page-apply .apply-detail .apply-chips > span { flex: 0 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+html[data-theme] body .page.page-apply .apply-queue-fit b { opacity: 0; transition: opacity .15s ease; }
+html[data-theme] body .page.page-apply .apply-queue-item:hover .apply-queue-fit b,
+html[data-theme] body .page.page-apply .apply-queue-item:focus-visible .apply-queue-fit b { opacity: 1; }
+
+/* v8 4. Queued jobs pop-over in the toolbar (3 Nov, Daksh): never in page flow.
+   Red badge = queued + newly built manual jobs; neutral dot when none. */
+html body .page-apply .apply-toolbar-tools .manual-queue-pop { position: relative; flex: none; }
+html body .page-apply .manual-queue-pop > summary { list-style: none; cursor: pointer; gap: 6px; }
+html body .page-apply .manual-queue-pop > summary::-webkit-details-marker { display: none; }
+html body .page-apply .manual-queue-pop-panel {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 40;
+  width: min(560px, calc(100vw - 48px)); max-height: calc(100vh - 180px); overflow: auto;
+  border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong);
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .55);
+}
+html[data-theme] body .page.page-apply .manual-queue-pop-panel .manual-queue-panel { display: block; border: 0; box-shadow: none; margin: 0; background: transparent; }
+html[data-theme] body .page.page-apply .manual-queue-pop-panel .manual-queue-empty-panel #manual-job-queue::before { content: "No queued jobs. Use Add job to save one."; display: block; padding: 4px 16px 14px; font-size: 12.5px; color: var(--subtle); }
+html body .page-apply .queue-badge { display: inline-flex; align-items: center; justify-content: center; flex: none; }
+html body .page-apply .queue-badge.is-count { min-width: 16px; height: 16px; padding: 0 4px; border-radius: 999px; background: #ef4444; color: #fff; font-size: 10px; font-weight: 700; line-height: 1; font-feature-settings: "tnum"; }
+html body .page-apply .queue-badge.is-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--subtle); }
+html body .page-apply .manual-just-built { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+html body .page-apply .manual-just-built h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #60a5fa; }
+html body .page-apply .manual-just-built ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+html body .page-apply .manual-just-built li { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12.5px; color: var(--muted); }
+html body .page-apply .manual-just-built li > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html body .page-apply .manual-just-built li strong { color: var(--ink); font-weight: 500; margin-right: 6px; }
+html body .page-apply .added-tag { display: inline-block; justify-self: start; font-style: normal; font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #60a5fa; margin-bottom: 1px; }
+html[data-theme] body .page.page-apply .apply-chips .apply-chip-added { color: #60a5fa; border-color: rgba(96, 165, 250, .45); }
+/* List rows keep one fixed height: the "You" tag sits on the avatar's lower edge. */
+html[data-theme] body .page.page-apply .apply-queue-item .added-tag {
+  position: absolute; left: 12px; top: calc(50% + 7px); width: 32px; margin: 0;
+  padding: 1px 0; border-radius: 999px; text-align: center; font-size: 8.5px; line-height: 1.2;
+  background: #2563eb; color: #fff; box-shadow: 0 0 0 2px var(--surface);
+}
+html body .page-apply .manual-just-built li > span { flex: 1 1 auto; }
+html body .page-apply .manual-just-built li > .button { flex: none; }
+html body .page-apply .manual-just-built ul { grid-template-columns: minmax(0, 1fr); }
+html body .page-apply .manual-just-built li { min-width: 0; }
+
+/* Click company / title in the apply header to copy it */
+html body .page-apply .apply-detail .application-role-copy > strong,
+html body .page-apply .apply-detail .application-role-copy > span { cursor: copy; }
+
+/* Hover + click feedback: Mark applied / Won't apply, and click-to-copy name/title */
+html body .page-apply .apply-mark-applied,
+html body .page-apply .apply-decide .application-wont-apply {
+  transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+}
+html body .page-apply .apply-mark-applied:hover,
+html body .page-apply .apply-decide .application-wont-apply:hover {
+  transform: translateY(-1px); filter: brightness(1.12);
+  box-shadow: 0 4px 12px rgba(0,0,0,.28);
+}
+html body .page-apply .apply-mark-applied:active,
+html body .page-apply .apply-decide .application-wont-apply:active {
+  transform: translateY(0) scale(.96); filter: brightness(.92); box-shadow: none;
+}
+html body .page-apply .apply-detail .application-role-copy > strong,
+html body .page-apply .apply-detail .application-role-copy > span:not(.application-location) {
+  transition: opacity .14s ease, text-decoration-color .14s ease;
+  text-decoration: underline dotted transparent; text-underline-offset: 3px;
+}
+html body .page-apply .apply-detail .application-role-copy > strong:hover,
+html body .page-apply .apply-detail .application-role-copy > span:hover {
+  opacity: .72; text-decoration-color: currentColor;
+}
+html body .page-apply .apply-detail .application-role-copy > strong:active,
+html body .page-apply .apply-detail .application-role-copy > span:active { opacity: .5; }
+html body .page-apply .apply-detail .application-role-copy > .copy-flash {
+  animation: copy-flash .6s ease;
+}
+@keyframes copy-flash {
+  0% { color: #4ade80; opacity: 1; text-decoration-color: #4ade80; }
+  100% { opacity: 1; }
+}
+
+/* Job inactive button matches the other decide buttons; status dropdown is faint until hover/focus */
+html body .page-apply .apply-decide .application-job-inactive { transition: transform .14s ease, filter .14s ease, box-shadow .14s ease; }
+html body .page-apply .apply-decide .application-job-inactive:hover { transform: translateY(-1px); filter: brightness(1.12); box-shadow: 0 4px 12px rgba(0,0,0,.28); }
+html body .page-apply .apply-decide .application-job-inactive:active { transform: scale(.96); filter: brightness(.92); box-shadow: none; }
+html body .page-apply .apply-status-field { opacity: .4; transition: opacity .18s ease; }
+html body .page-apply .apply-status-field:hover,
+html body .page-apply .apply-status-field:focus-within { opacity: 1; }
+html body .page-apply .apply-decide .application-job-inactive { border: 1px solid rgba(255,255,255,.16); border-radius: 10px; }
+
+/* v8b (3 Nov, Daksh "too cluttered"): Queued pop-over = one compact line per job.
+   Title + company · date, small Build button. Long text, badges and contact search hidden. */
+html body .page-apply .manual-queue-pop-panel .manual-queue-panel > .section-heading { padding: 12px 16px 8px !important; min-height: 0 !important; align-items: center !important; }
+html body .page-apply .manual-queue-pop-panel .manual-queue-panel h2 { font-size: 13px !important; font-weight: 600 !important; margin: 0 !important; }
+html body .page-apply .manual-queue-pop-panel .section-subtitle,
+html body .page-apply .manual-queue-pop-panel .manual-job-copy > p,
+html body .page-apply .manual-queue-pop-panel .manual-job-copy > a,
+html body .page-apply .manual-queue-pop-panel .manual-job-title-row .badge,
+html body .page-apply .manual-queue-pop-panel .manual-contact-status,
+html body .page-apply .manual-queue-pop-panel .manual-build-reason { display: none !important; }
+html body .page-apply .manual-queue-pop-panel .manual-queue-count { font-size: 11.5px; color: var(--subtle); white-space: nowrap; }
+html body .page-apply .manual-queue-pop-panel .manual-job-list { padding: 0 8px 8px !important; }
+html body .page-apply .manual-queue-pop-panel .manual-job-item { align-items: center !important; flex-wrap: nowrap !important; gap: 10px !important; padding: 8px !important; border-top: 1px solid var(--line); }
+html body .page-apply .manual-queue-pop-panel .manual-job-copy { flex: 1 1 auto; min-width: 0; display: grid; gap: 2px; }
+html body .page-apply .manual-queue-pop-panel .manual-job-title-row { min-width: 0; }
+html body .page-apply .manual-queue-pop-panel .manual-job-title-row strong,
+html body .page-apply .manual-queue-pop-panel .manual-job-copy > span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html body .page-apply .manual-queue-pop-panel .manual-job-title-row strong { font-size: 13px; font-weight: 500; }
+html body .page-apply .manual-queue-pop-panel .manual-job-copy > span { font-size: 11.5px; color: var(--subtle); }
+html body .page-apply .manual-queue-pop-panel .manual-job-action { flex: none; margin: 0 !important; }
+html body .page-apply .manual-queue-pop-panel .manual-build-action { height: 28px !important; min-height: 28px !important; padding: 0 10px !important; font-size: 12px !important; }
+html body .page-apply .manual-queue-pop-panel .manual-build-live { flex: none; font-size: 11.5px; color: var(--subtle); white-space: nowrap; }
+html body .page-apply .manual-queue-pop-panel { width: min(420px, calc(100vw - 48px)) !important; }

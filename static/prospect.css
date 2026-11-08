@@ -1,0 +1,17 @@
+.page-prospect { min-width: 0; }
+.page-prospect .page-heading { align-items: center; }
+.prospect-subtitle { margin: 6px 0 0; color: var(--muted); }
+.prospect-panel { overflow: hidden; padding: 0; min-height: 580px; }
+.prospect-frame { display: block; width: 100%; height: max(680px, calc(100dvh - 220px)); border: 0; background: var(--surface); }
+.prospect-status { display: flex; min-height: 580px; padding: 40px 24px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.prospect-status-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--surface-2); color: var(--ink); margin-bottom: 18px; }
+.prospect-status h2 { margin: 0 0 10px; font-size: 23px; }
+.prospect-status p { margin: 0 0 20px; max-width: 420px; color: var(--muted); }
+.prospect-status.is-error .prospect-status-icon { background: var(--warning-bg); color: var(--warning); }
+.page-prospect[hidden], .page-prospect [hidden] { display: none; }
+@media (max-width: 620px) {
+  .page-prospect .page-heading { align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+  .page-prospect .heading-actions { width: 100%; }
+  .prospect-frame { height: max(680px, calc(100dvh - 200px)); }
+  .prospect-status, .prospect-panel { min-height: 440px; }
+}

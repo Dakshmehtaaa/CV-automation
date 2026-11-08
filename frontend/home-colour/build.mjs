@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {build} from 'esbuild';
+import postcss from 'postcss';
+import tailwind from 'tailwindcss';
+const directory=path.dirname(fileURLToPath(import.meta.url));
+process.chdir(directory);
+const output=path.resolve(directory,'../../static');
+const result=await build({entryPoints:['src/studio.tsx'],bundle:true,write:false,minify:true,format:'esm',platform:'browser',target:'es2022',define:{'process.env.NODE_ENV':'"production"'},legalComments:'none',tsconfig:'tsconfig.json'});
+const css=(await postcss([tailwind('./tailwind.config.cjs')]).process(fs.readFileSync('src/styles.css','utf8'),{from:'src/styles.css'})).css;
+fs.writeFileSync(path.join(output,'home-colour.js'),result.outputFiles[0].text);
+fs.writeFileSync(path.join(output,'home-colour.css'),css);
+console.log(JSON.stringify({javascriptBytes:result.outputFiles[0].contents.length,cssBytes:Buffer.byteLength(css)}));

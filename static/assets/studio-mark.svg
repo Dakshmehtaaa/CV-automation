@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <!-- CV Studio Brand Emblem | #5 Studio Spine (Minimalist Purple Theme) -->
+  <defs>
+    <linearGradient id="pMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7a73ff"/>
+      <stop offset="55%" stop-color="#635bff"/>
+      <stop offset="100%" stop-color="#4434d4"/>
+    </linearGradient>
+    <linearGradient id="pSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#8b84ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="14" width="28" height="10" rx="5" fill="url(#pSoft)"/>
+  <rect x="18" y="27" width="28" height="10" rx="5" fill="url(#pMain)"/>
+  <rect x="26" y="40" width="28" height="10" rx="5" fill="url(#pMain)" opacity="0.85"/>
+</svg>

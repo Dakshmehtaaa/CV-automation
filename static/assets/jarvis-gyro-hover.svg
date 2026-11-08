@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="36" height="36" id="jarvis-gyro-hover" style="cursor:pointer; -webkit-tap-highlight-color:transparent;">
+  <!-- Jarvis Orbital Mind | Compact Hover Gyro (Quick & Smooth 440ms) -->
+  <defs>
+    <linearGradient id="jMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b4afff"/>
+      <stop offset="50%" stop-color="#635bff"/>
+      <stop offset="100%" stop-color="#4434d4"/>
+    </linearGradient>
+    <linearGradient id="jGimbal" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#635bff" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="jSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#8b84ff"/>
+    </linearGradient>
+    <radialGradient id="jGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b84ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#635bff" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      #jarvis-gyro-hover .gyro-outer,
+      #jarvis-gyro-hover .gyro-inner,
+      #jarvis-gyro-hover .gyro-core,
+      #jarvis-gyro-hover .gyro-glow {
+        transform-origin: 32px 32px;
+        will-change: transform, opacity;
+      }
+      #jarvis-gyro-hover .gyro-outer {
+        transition: transform 0.44s cubic-bezier(0.22, 1, 0.36, 1), filter 0.44s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      #jarvis-gyro-hover .gyro-inner {
+        opacity: 0.48;
+        transition: transform 0.44s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.32s ease;
+      }
+      #jarvis-gyro-hover .gyro-core {
+        transition: transform 0.44s cubic-bezier(0.22, 1, 0.36, 1), filter 0.44s ease;
+      }
+      #jarvis-gyro-hover .gyro-glow {
+        opacity: 0.65;
+        transition: transform 0.44s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.44s ease;
+      }
+      #jarvis-gyro-hover:hover .gyro-outer,
+      #jarvis-gyro-hover.is-active .gyro-outer {
+        transform: rotate(180deg) scale(1.03);
+        filter: drop-shadow(0 0 4px rgba(139, 132, 255, 0.55));
+      }
+      #jarvis-gyro-hover:hover .gyro-inner,
+      #jarvis-gyro-hover.is-active .gyro-inner {
+        transform: rotate(-180deg) scale(1.04);
+        opacity: 0.92;
+      }
+      #jarvis-gyro-hover:hover .gyro-core,
+      #jarvis-gyro-hover.is-active .gyro-core {
+        transform: scale(1.16);
+        filter: drop-shadow(0 0 6px rgba(196, 181, 253, 0.85));
+      }
+      #jarvis-gyro-hover:hover .gyro-glow,
+      #jarvis-gyro-hover.is-active .gyro-glow {
+        transform: scale(1.22);
+        opacity: 1;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #jarvis-gyro-hover * { transition: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Dark Studio Squircle -->
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#0b0b0d"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#1f1f24" stroke-width="1.5"/>
+
+  <!-- Compact Ambient Glow -->
+  <circle class="gyro-glow" cx="32" cy="32" r="15" fill="url(#jGlow)"/>
+
+  <!-- Inner Counter-Gimbal Ring (Smaller) -->
+  <g class="gyro-inner">
+    <ellipse cx="32" cy="32" rx="11.2" ry="4.6" transform="rotate(32 32 32)" fill="none" stroke="url(#jGimbal)" stroke-width="1.6"/>
+  </g>
+
+  <!-- Primary Outer Gyro Ring + Satellite (Smaller, Refined) -->
+  <g class="gyro-outer">
+    <ellipse cx="32" cy="32" rx="14.6" ry="6.2" transform="rotate(-28 32 32)" fill="none" stroke="url(#jMain)" stroke-width="2.8" stroke-linecap="round"/>
+    <circle cx="44.9" cy="25.1" r="1.85" fill="#e4dfff"/>
+  </g>
+
+  <!-- Compact Luminous AI Core -->
+  <circle class="gyro-core" cx="32" cy="32" r="4.3" fill="url(#jSoft)"/>
+</svg>
